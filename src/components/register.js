@@ -24,6 +24,13 @@ const validateForm = errors => {
 // 	/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
 //   );
 
+  const validEmail = (text) => {
+	    const regex = RegExp(
+	        /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+	      );
+	     
+	    return !regex.test(text);
+	}
 
 class Register extends  Component {
 
@@ -62,7 +69,7 @@ class Register extends  Component {
 				 name === '' ? 'Please Enter your lastname' : ''
 			break;
 			case 'email':
-				errors.email = value.length < 1 ? 'Please Enter a Valid Email Adrress' : ' ' 
+				errors.email = validEmail(value)  ? 'Please Enter a Valid Email Adrress' : '' 
 			break;
 			case 'password':
 				errors.password = value.length < 7 ? 'Please enter 7 Characters and above' : '' 

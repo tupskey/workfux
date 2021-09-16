@@ -140,10 +140,10 @@ const Footer = () => {
 						<div className="row justify-content-md-center">
 							<div className="col-xs-12 col-sm-12 col-md-12 col-lg-10 push-lg-1">
 								<div className="wt-companyinfo">
-									<span><a href="/">New @ Worktern?</a> Dotem eiusmod tempor incune utnaem labore etdolore.</span>
+									
 								</div>
 								<div className="wt-fbtnarea">
-									<a href="javascript:void(0)" className="wt-btn">Join Now</a>
+									<a href="/" className="wt-btn">Join Now</a>
 								</div>
 							</div>
 						</div>
