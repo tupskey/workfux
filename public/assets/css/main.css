@@ -111,7 +111,7 @@ input[type="search"],
 input[type="tel"],
 input[type="color"],
 .uneditable-input {
-	color: #28a745;
+	color: rgb(141, 138, 138);
 	outline: none;
 	height: 50px;
 	background:#fff;
@@ -129,20 +129,20 @@ input[type="color"],
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
-.form-group textarea::placeholder{color: #28a745;}
+.form-group textarea::placeholder{color: rgb(141, 138, 138);;}
 textarea.form-control{
 	resize: none;
 	height: 210px;
 }
-.form-control::-webkit-input-placeholder { color: #28a745; } /* WebKit, Blink, Edge */
-.form-control:-moz-placeholder { color: #28a745; } /* Mozilla Firefox 4 to 18 */
-.form-control::-moz-placeholder { color: #28a745; } /* Mozilla Firefox 19+ */
-.form-control:-ms-input-placeholder { color: #28a745; } /* Internet Explorer 10-11 */
-.form-control::-ms-input-placeholder { color:#28a745; } /* Microsoft Edge */
+.form-control::-webkit-input-placeholder { color: rgb(141, 138, 138);; } /* WebKit, Blink, Edge */
+.form-control:-moz-placeholder { color: rgb(141, 138, 138);; } /* Mozilla Firefox 4 to 18 */
+.form-control::-moz-placeholder { color: rgb(141, 138, 138);; } /* Mozilla Firefox 19+ */
+.form-control:-ms-input-placeholder { color: rgb(141, 138, 138);; } /* Internet Explorer 10-11 */
+.form-control::-ms-input-placeholder { color:rgb(141, 138, 138);; } /* Microsoft Edge */
 input:focus,
 .select select:focus,
 .form-control:focus {
-	color: #28a745;
+	color: rgb(141, 138, 138);;
 	border-color: #ddd;
 	-webkit-box-shadow:none !important;
 			box-shadow:none !important;
@@ -153,7 +153,7 @@ input:focus,
 	margin:0 0 20px;
 }
 label {
-	color: #28a745;
+	color: rgb(141, 138, 138);;
 	display: block;
 	font-weight: 400;
 	margin-bottom: 10px;
@@ -303,7 +303,7 @@ address { font-style: italic; }
 .wt-checkbox input[type=checkbox]:checked + label:before {content:'\f00c';}
 .wt-checkbox input[type=checkbox] + label,
 .wt-radio input[type=radio] + label {
-	color:#767676;
+	color:rgb(141, 138, 138);;
 	font-size: 14px;
 	font-weight: 500;
 	line-height: 20px;
@@ -313,11 +313,11 @@ address { font-style: italic; }
 .wt-checkbox input[type=checkbox] + label{line-height: 14px;}
 .wt-checkbox input[type=checkbox] + label:before{
 	top: 1px;
-	color: #28a745;
+	color: rgb(141, 138, 138);;
 }
 .wt-checkbox input[type=checkbox] + label span{
 	float: left;
-	color: #28a745;
+	color: rgb(141, 138, 138);;
 	font-size: 13px; 
 }
 .wt-checkbox input[type=checkbox]:checked + label:before,
@@ -360,7 +360,7 @@ address { font-style: italic; }
 	width: 6px;
 	height: 6px;
 	content: '';
-	background:#00cc8d;
+	background:rgb(141, 138, 138);;
 	border-radius: 50px;
 }
 .wt-radio input[type=radio] + label:before{
@@ -1501,7 +1501,7 @@ body.wt-login .wt-userlogedin{display: block;}
 	border-radius: 0 0 5px 5px;
 }
 .wt-radioholder .wt-radio input[type=radio] + label{
-	color: #323232;
+	color: rgb(141, 138, 138);;
 	font-size: 18px;
 	line-height: 60px;
 	padding: 0 30px 0 20px;
@@ -2917,8 +2917,8 @@ body.wt-login .wt-userlogedin{display: block;}
 .wt-formaccordionhold li:nth-child(even) .wt-accordiontitle{border-bottom: 1px solid #ddd;}
 .wt-formaccordionhold li:nth-child(even) .wt-accordiondetails{border:0;}
 .wt-formaccordionhold .wt-accordiontitle{padding: 0 20px;}
-.wt-formaccordionhold .wt-accordiontitle .wt-radio label{color: #28a745;line-height: 16px;padding: 17px 20px 17px 30px;}
-.wt-formaccordionhold .wt-accordiontitle .wt-radio label span{color: #28a745;font-size: 13px;line-height: inherit;}
+.wt-formaccordionhold .wt-accordiontitle .wt-radio label{color: rgb(141, 138, 138);;line-height: 16px;padding: 17px 20px 17px 30px;}
+.wt-formaccordionhold .wt-accordiontitle .wt-radio label span{color: rgb(141, 138, 138);;font-size: 13px;line-height: inherit;}
 .wt-formaccordionhold .wt-accordiontitle .wt-radio input[type=radio] + label:before{top: 50%;margin-top:-8px; }
 .wt-formaccordionhold .wt-accordiontitle .wt-radio input[type=radio] + label:after{top: 50%; margin-top:-3px;}
 .wt-formaccordionhold .wt-accordiontitle .wt-radio input[type=radio]:checked + label{color: #28a745;}

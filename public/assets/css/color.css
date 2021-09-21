@@ -70,7 +70,7 @@ input:focus,
 .wt-clicksavebtn,
 .wt-pagination ul li.wt-active a,
 .wt-usernav > ul
-{ border-color: #28a745; }
+{ border-color: rgb(141, 138, 138); }
 .wt-filtertag .wt-filtertagclear a:after{ border-left-color: #28a745; }
 /* RGBA Background Color */
 .loader{

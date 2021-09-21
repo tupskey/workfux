@@ -59,6 +59,17 @@ const Virtual = () => {
 														</span>
 													</div>	
 												</fieldset>	
+												<fieldset>
+												<div className="form-group ">
+															<span className="wt-select">
+																<select value={project} onChange={(e) => setProject(e.target.value)}>
+																	<option value="" disabled="">Select Gender</option>
+																	<option value="">Male</option>
+																	<option value="">Female</option>
+																</select>
+															</span>
+														</div>
+												</fieldset>
                                                 <fieldset className="wt-registerformgroup">
 													<div className="form-group">
 														<span className="wt-select">

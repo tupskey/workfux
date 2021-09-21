@@ -276,9 +276,8 @@ class Register extends  Component {
 													<ul className="wt-socialicons wt-iconwithtext">
 														<li className="wt-facebook"><a href="/"><i className="fa fa-facebook-f"></i><em>Facebook</em></a>
 														</li>
-														<li className="wt-twitter"><a href="/"><i className="fa fa-twitter"></i><em>Twitter</em></a></li>
+													
 														<li className="wt-googleplus"><a href="/"><i className="fa fa-google-plus-g"></i><em>Google</em></a></li>
-														<li className="wt-instagram"><a href="/"><i className="fa fa-instagram"></i><em>Instagram</em></a></li>
 													</ul>
 												</div>
 											</div>

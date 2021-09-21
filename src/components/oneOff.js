@@ -9,7 +9,7 @@ const OneOff = () => {
 					<div className="row justify-content-md-center">
 						<div className="col-xs-12 col-sm-12 col-md-8 push-md-2 col-lg-6 push-lg-3">
 							<div className="wt-innerbannercontent">
-							<div className="wt-title"><h2>One Off Project</h2></div>
+							<div className="wt-title"><h2>One Off Project.</h2></div>
 							<ol className="wt-breadcrumb">
 								<li><a href="index.html">Home</a></li>
 								
@@ -21,15 +21,15 @@ const OneOff = () => {
 			</div>
 
 
-    <main id="wt-main" class="wt-main wt-haslayout wt-innerbgcolor">
-		<div class="wt-haslayout wt-main-section">
-            <div className="wt-haslayout">
+			<main id="wt-main" className="wt-main wt-haslayout wt-innerbgcolor">
+				<div className="wt-haslayout wt-main-section">
+					<div className="wt-haslayout">
 						<div className="container">
 							<div className="row">
 								<div id="wt-twocolumns" className="wt-twocolumns wt-haslayout">
 									<div className="col-xs-12 col-sm-12 col-md-5 col-lg-5 col-xl-4 float-left">
-										<aside id="wt-sidebar" className="wt-sidebar"> 
-                                            <div className="wt-widget wt-effectiveholder">
+										<aside id="wt-sidebar" className="wt-sidebar">
+											<div className="wt-widget wt-effectiveholder">
 												<div className="wt-widgettitle">
 													<h2>Categories</h2>
 												</div>
@@ -41,41 +41,15 @@ const OneOff = () => {
 																<a href="/" className="wt-searchgbtn"><i className="lnr lnr-magnifier"></i></a>
 															</div>
 														</fieldset>
-														
-									               </form>
-				                                </div>
-			                                </div>
-                                        </aside>
-                                     </div>
-                                     <div classNameName="col-xs-12 col-sm-12 col-md-7 col-lg-7 col-xl-8 float-left">
-										<div classNameName="wt-userlistingholder wt-haslayout">
-											<div classNameName="wt-userlistingtitle">
-												<span>01 - 48 of 57143 results for <em>"PHP Developer"</em></span>
+													</form>
+												</div>
 											</div>
-											<div classNameName="wt-filterholder">
-												<ul classNameName="wt-filtertag">
-													<li classNameName="wt-filtertagclear">
-														<a href="/"><i classNameName="fa fa-times"></i> <span>Clear All Filter</span></a>
-													</li>
-												 	<li classNameName="alert alert-dismissable fade in">
-														<a href="/"><i classNameName="fa fa-times close" data-dismiss="alert" aria-label="close"></i> <span>Graphic Design</span></a>
-													</li>
-													<li classNameName="alert alert-dismissable fade in">
-														<a href="/"><i classNameName="fa fa-times close" data-dismiss="alert" aria-label="close"></i> <span>Any Hourly Rate</span></a>
-													</li>
-													<li classNameName="alert alert-dismissable fade in">
-														<a href="/"><i classNameName="fa fa-times close" data-dismiss="alert" aria-label="close"></i> <span>Any Freelancer Type</span></a>
-													</li>
-													<li classNameName="alert alert-dismissable fade in">
-														<a href="/"><i classNameName="fa fa-times close" data-dismiss="alert" aria-label="close"></i> <span>Chinese</span></a>
-													</li>
-													<li classNameName="alert alert-dismissable fade in">
-														<a href="/"><i classNameName="fa fa-times close" data-dismiss="alert" aria-label="close"></i> <span>English</span></a>
-													</li>
-												</ul>
-											</div>
-											 <div className="wt-userlistinghold wt-featured wt-userlistingholdvtwo">
-												<span className="wt-featuredtag"><img src={process.env.PUBLIC_URL + 'assets/images/featured.png'} alt="img description" data-tipso="Plus Member" className="template-content tipso_style" /></span>
+									   </aside>
+									</div>
+									<div className="col-xs-12 col-sm-12 col-md-7 col-lg-7 col-xl-8 float-left">
+										<div className="wt-userlistingholder wt-haslayout">	
+											<div className="wt-userlistinghold wt-featured wt-userlistingholdvtwo">
+												<span className="wt-featuredtag"><img src={process.env.PUBLIC_URL +  'assets/images/featured.png'} alt="img description" data-tipso="Plus Member" className="template-content tipso_style" /></span>
 												<div className="wt-userlistingcontent">
 													<div className="wt-contenthead">
 														<div className="wt-title">
@@ -95,8 +69,8 @@ const OneOff = () => {
 														<ul>
 															<li><span><i className="fa fa-dollar-sign wt-viewjobdollar"></i>Professional</span></li>
 															<li><span><em><img src={process.env.PUBLIC_URL + 'assets/images/flag/img-04.png'} alt="img description" /></em>England</span></li>
-															<li><span><i className="fa fa-folder wt-viewjobfolder"></i>Type: Per Hour</span></li>
-															<li><span><i className="fa fa- wt-viewjobclock"></i>Duration: 03 Months</span></li>
+															<li><span><i className="far fa-folder wt-viewjobfolder"></i>Type: Per Hour</span></li>
+															<li><span><i className="far fa-clock wt-viewjobclock"></i>Duration: 03 Months</span></li>
 															<li><span><i className="fa fa-tag wt-viewjobtag"></i>Job ID: gy3yV2Vm5u</span></li>
 															<li><a href="/" className="wt-clicklike wt-clicksave"><i className="fa fa-heart"></i> Save</a></li>
 															<li className="wt-btnarea"><a href="userlisting.html" className="wt-btn">View Job</a></li>
@@ -105,15 +79,27 @@ const OneOff = () => {
 												</div>
 											</div>
 											
+											<nav className="wt-pagination">
+												<ul>
+													<li className="wt-prevpage"><a href="/"><i className="lnr lnr-chevron-left"></i></a></li>
+													<li><a href="/">1</a></li>
+													<li><a href="/">2</a></li>
+													<li><a href="/">3</a></li>
+													<li><a href="/">4</a></li>
+													<li><a href="/">...</a></li>
+													<li><a href="/">50</a></li>
+													<li className="wt-nextpage"><a href="/"><i className="lnr lnr-chevron-right"></i></a></li>
+												</ul>
+											</nav>
+										</div>
 									</div>
-</div>
-                                </div>
-                        </div>
-                </div>
-           </div> 
-
-        </div>
-        </main>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+</main>
+			
         </>
     );
 }
