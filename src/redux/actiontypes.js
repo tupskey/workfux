@@ -1,12 +1,14 @@
-export const LOGIN_START = 'LOGIN_START'
-export const LOGIN_FAIL = 'LOGIN_FAIL'
-export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
+
 
 export const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS'
 
 export const REGISTER_FAILED = 'REGISTER_FAILED'
 export const REGISTER_SUCCESS = 'REGISTER_SUCCESS'
 
-export const USER_LOADING = 'USER_LOADING'
-export const USER_FAILED = 'USER_FAILED'
-export const USER_LOADED = 'USER_LOADED'
+export const AUTH_START = 'AUTH_START'
+export const AUTH_SUCCESS = 'AUTH_SUCCESS'
+export const AUTH_FAILED  = 'AUTH_FAILED'
+
+
+
+

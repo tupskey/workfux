@@ -1,24 +1,49 @@
 import * as ActionTypes from './actiontypes';
 
 
-export const loginStart = () => ({
-    type: ActionTypes.LOGIN_START
+export const authStart = () => ({
+    type:ActionTypes.AUTH_START
 })
 
-export const loginSuccess = (authData) => ({
-    type: ActionTypes.LOGIN_SUCCESS,
-    payload: authData
+export const authSuccess = (token, userId) => ({
+    type: ActionTypes.AUTH_SUCCESS,
+    token: token,
+    userId: userId
 })
 
-export const loginFail = (error) => ({
-    type: ActionTypes.LOGIN_FAIL,
-    payload: error
+export const authFail = (error) => ({
+    type: ActionTypes.AUTH_FAILED,
+    error: error
 })
 
-export const loginUser = (email, password) => {
-    dispatch(loginStart())
+export const registerFailed = (error) => ({
+    type: ActionTypes.REGISTER_FAILED,
+    error: error
+})
 
-    
+export const registerSuccess = () => ({
+    type: ActionTypes.REGISTER_SUCCESS
+})
+
+
+export const loginUser =  () =>  (dispatch) =>{
+
+    dispatch(authStart())
 
     return 
+
 }
+
+export const regUser = () => (dispatch) => {
+
+}
+
+export const checkAuthState = () => {
+
+}
+
+
+
+
+
+

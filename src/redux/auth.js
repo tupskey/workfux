@@ -1,10 +1,8 @@
 
-
 export const Auth = (state = {
                 token: null,
-                isAuthenticated: false,
                 userId: null,
-                isloading: false,
+                isloading: true,
                 error: null
 }, action) => {
     switch(action.type) {
