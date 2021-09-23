@@ -14,6 +14,7 @@ class Header extends Component {
 
 		this.state = {
 			isModalOpen : false,
+			isnavopen: false,
 			username: 'tope',
 			password: 'tope',
 			authenticated: false,
@@ -25,6 +26,7 @@ class Header extends Component {
 		this.toggleModal = this.toggleModal.bind(this)
 		this.handleSubmit = this.handleSubmit.bind(this)
 		this.handleChange = this.handleChange.bind(this)
+		this.toggleNav = this.toggleNav.bind(this)
     }
 
 
@@ -34,6 +36,12 @@ class Header extends Component {
 	toggleModal () {
 		this.setState({
 			isModalOpen : !this.state.isModalOpen
+		})
+	}
+
+	toggleNav() {
+		this.setState({
+			isnavopen: !this.state.isnavopen
 		})
 	}
 	handleChange = e => {
@@ -104,6 +112,7 @@ class Header extends Component {
 										<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 											<i className="lnr lnr-menu"></i>
 										</button>
+									
 										<div className="collapse navbar-collapse wt-navigation" id="navbarNav">
 											<ul className="navbar-nav">
 												<li className="menu-item-has-children page_item_has_children">
@@ -210,7 +219,7 @@ class Header extends Component {
 										
 									</Modal>
                                 </div>   
-										<NavLink  to="/join" className="wt-btn">Join Now</NavLink>
+								<NavLink  to="/join" className="wt-btn">Join Now</NavLink>
 									</div>
 									<div className="wt-userlogedin">
 										<figure className="wt-userimg">

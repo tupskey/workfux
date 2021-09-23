@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {  Card, CardTitle, CardText, CardBody, } from "reactstrap";
 
 const Services = () => {
     return (
@@ -19,7 +20,6 @@ const Services = () => {
 				</div>
 			</div>
          <main id="wt-main" className="wt-main wt-haslayout wt-innerbgcolor">
-			
 			<div className="wt-haslayout wt-main-section">
 				<div className="wt-contentwrappers">
 					<div className="container">
@@ -39,77 +39,24 @@ const Services = () => {
 																	<span>Start Today For a Great Future</span>
 																</div>
 																<div className="wt-description">
-																	<p>Dotem eiusmod tempor incune utnaem labore etdolore maigna aliqua eniina ilukita ylokem lokateise ination voluptate velite esse cillum dolore eu fugnulla pariatur lokaim urianewce animid <a href="/">Learn more</a></p>
+																	<p>Dotem eiusmod tempor incune utnaem labore etdolore maigna aliqua eniina ilukita ylokem lokateise ination 
+																		voluptate velite esse cillum dolore eu fugnulla pariatur lokaim urianewce animid <a href="/">Learn more</a></p>
+																		
+																<Card  outline color="success">
+																	<CardBody>
+																		<CardTitle tag="h5">Description</CardTitle>
+																				<CardText>Dotem eiusmod tempor incune utnaem labore etdolore maigna aliqua eniina ilukita ylokem lokateise
+														 								ination voluptate velite esse cillum dolore eu fugnulla pariatur lokaim urianewce animid 
+																							 Dotem eiusmod tempor incune utnaem labore etdolore maigna aliqua eniina ilukita ylokem lokateise
+														 											 ination voluptate velite esse cillum dolore eu fugnulla pariatur lokaim urianewce animid
+																				</CardText>
+																				
+																				<Link to="/hire-virtual-assistant"><button className="wt-btn">Start Now</button></Link>
+																	</CardBody>
+																</Card>
+										
 																</div>
 															</div>
-															<ul className="wt-accordionhold accordion">
-																<li>
-																	<div className="wt-accordiontitle collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne">
-																		<span>Adipisicing elit, sed do eiusmod tempor incididunt?</span>
-																	</div>
-																	<div className="wt-accordiondetails collapse show" id="collapseOne" aria-labelledby="headingOne">
-																		<div className="wt-title">
-																			<h3>Digital Marketing</h3>
-																		</div>
-																		<div className="wt-description">
-																			<p>Consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore eta dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-																			</p>
-																		</div>
-																		<div className="wt-likeunlike">
-																			<span>Did you find this useful?</span>
-																			<a href="/" className="wt-like"><i className="fa fa-thumbs-up"></i></a>
-																			<a href="/" className="wt-unlike"><i className="fa fa-thumbs-down"></i></a>
-																		</div>
-																	</div>
-																</li>
-																<li>
-																	<div className="wt-accordiontitle collapsed" id="headingtwo" data-toggle="collapse" data-target="#collapsetwo">
-																		<span>Dolore magna aliqua enim ad minim veniam?</span>
-																	</div>
-																	<div className="wt-accordiondetails collapse" id="collapsetwo" aria-labelledby="headingtwo">
-																		<div className="wt-title">
-																			<h3>Digital Marketing</h3>
-																		</div>
-																		<div className="wt-description">
-																			<p>
-																				Consectetur adipisicing elit sed aeiusmisuod tempor incididunt labore dolore ma alaeiqua enim ade minim veniam quis nostr xecitation ullamcoaris nisi ut aliquipa extaea coedmmmodo equate irure dolawor in reprehenderit.
-																			</p>
-																		</div>
-																		<div className="wt-likeunlike">
-																			<span>Did you find this useful?</span>
-																			<a href="/" className="wt-like"><i className="fa fa-thumbs-up"></i></a>
-																			<a href="/" className="wt-unlike"><i className="fa fa-thumbs-down"></i></a>
-																		</div>
-																	</div>
-																</li>
-																<li>
-																	<div className="wt-accordiontitle collapsed" id="headingthreea" data-toggle="collapse" data-target="#collapsethree">
-																		<span>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo?</span>
-																	</div>
-																	<div className="wt-accordiondetails collapse" id="collapsethree" aria-labelledby="headingthreea">
-																		<div className="wt-title">
-																			<h3>Digital Marketing</h3>
-																		</div>
-																		<div className="wt-description">
-																			<p>
-																				Consectetur adipisicing elit sed aeiusmisuod tempor incididunt labore dolore ma alaeiqua enim ade minim veniam quis nostr xecitation ullamcoaris nisi ut aliquipa extaea coedmmmodo equate irure dolawor in reprehenderit.
-																			</p>
-																		</div>
-																		<div className="wt-likeunlike">
-																			<span>Did you find this useful?</span>
-																			<a href="/" className="wt-like"><i className="fa fa-thumbs-up"></i></a>
-																			<a href="/" className="wt-unlike"><i className="fa fa-thumbs-down"></i></a>
-																		</div>
-																	</div>
-																</li>
-															</ul>
-                                                            <div className="col-12 col-sm-12 col-md-12 col-lg-5 ">
-														    <div className="wt-howtoworkimg">
-															<figure>
-                                                                <Link to="/hire-virtual-assistant"><button className="wt-btn">Start Now</button></Link>
-															</figure>
-														    </div>
-													        </div>
 														</div>
 													</div>
 													<div className="col-12 col-sm-12 col-md-12 col-lg-5 float-right">
@@ -131,78 +78,25 @@ const Services = () => {
 																	<span>Focus on Your Work &amp; Team</span>
 																</div>
 																<div className="wt-description">
-																	<p>Dotem eiusmod tempor incune utnaem labore etdolore maigna aliqua eniina ilukita ylokem lokateise ination voluptate velite esse cillum dolore eu fugnulla pariatur lokaim urianewce animid learn <a href="/">more</a></p>
+																	<p>Dotem eiusmod tempor incune utnaem labore etdolore maigna aliqua eniina
+																		 ilukita ylokem lokateise ination voluptate velite esse cillum dolore eu fugnulla pariatur
+																		  lokaim urianewce animid learn <a href="/">more</a></p>
+																		  <Card  outline color="success">
+																	<CardBody>
+																		<CardTitle tag="h5">Description</CardTitle>
+																				<CardText>Dotem eiusmod tempor incune utnaem labore etdolore maigna aliqua eniina ilukita ylokem lokateise
+														 								ination voluptate velite esse cillum dolore eu fugnulla pariatur lokaim urianewce animid 
+																							 Dotem eiusmod tempor incune utnaem labore etdolore maigna aliqua eniina ilukita ylokem lokateise
+														 											 ination voluptate velite esse cillum dolore eu fugnulla pariatur lokaim urianewce animid
+																				</CardText>
+																				
+																				<Link to="/hire-virtual-assistant"><button className="wt-btn">Start Now</button></Link>
+																	</CardBody>
+																</Card>
 																</div>
 															</div>
-															<ul className="wt-accordionhold accordion">
-																<li>
-																	<div className="wt-accordiontitle collapsed" id="headingtwo2" data-toggle="collapse" data-target="#collapsetwo2">
-																		<span>Nostrud exercitation ullamco laboris nisi ut aliquip?</span>
-																	</div>
-																	<div className="wt-accordiondetails collapse" id="collapsetwo2" aria-labelledby="headingtwo2">
-																		<div className="wt-title">
-																			<h3>Digital Marketing</h3>
-																		</div>
-																		<div className="wt-description">
-																			<p>
-																				Consectetur adipisicing elit sed aeiusmisuod tempor incididunt labore dolore ma alaeiqua enim ade minim veniam quis nostr xecitation ullamcoaris nisi ut aliquipa extaea coedmmmodo equate irure dolawor in reprehenderit.
-																			</p>
-																		</div>
-																		<div className="wt-likeunlike">
-																			<span>Did you find this useful?</span>
-																			<a href="/" className="wt-like"><i className="fa fa-thumbs-up"></i></a>
-																			<a href="/" className="wt-unlike"><i className="fa fa-thumbs-down"></i></a>
-																		</div>
-																	</div>
-																</li>
-																<li>
-																	<div className="wt-accordiontitle collapsed" id="headingtwo4" data-toggle="collapse" data-target="#collapsetwo4">
-																		<span>Commodo consequat aute irure dolor in reprehenderit in voluptate velit?</span>
-																	</div>
-																	<div className="wt-accordiondetails collapse" id="collapsetwo4" aria-labelledby="headingtwo4">
-																		<div className="wt-title">
-																			<h3>Digital Marketing</h3>
-																		</div>
-																		<div className="wt-description">
-																			<p>
-																				Consectetur adipisicing elit sed aeiusmisuod tempor incididunt labore dolore ma alaeiqua enim ade minim veniam quis nostr xecitation ullamcoaris nisi ut aliquipa extaea coedmmmodo equate irure dolawor in reprehenderit.
-																			</p>
-																		</div>
-																		<div className="wt-likeunlike">
-																			<span>Did you find this useful?</span>
-																			<a href="/" className="wt-like"><i className="fa fa-thumbs-up"></i></a>
-																			<a href="/" className="wt-unlike"><i className="fa fa-thumbs-down"></i></a>
-																		</div>
-																	</div>
-																</li>
-																<li>
-																	<div className="wt-accordiontitle collapsed" id="headingthree2" data-toggle="collapse" data-target="#collapsethree2">
-																		<span>Cillum dolore eu fugiat nulla pariatur?</span>
-																	</div>
-																	<div className="wt-accordiondetails collapse" id="collapsethree2" aria-labelledby="headingthree2">
-																		<div className="wt-title">
-																			<h3>Digital Marketing</h3>
-																		</div>
-																		<div className="wt-description">
-																			<p>
-																				Consectetur adipisicing elit sed aeiusmisuod tempor incididunt labore dolore ma alaeiqua enim ade minim veniam quis nostr xecitation ullamcoaris nisi ut aliquipa extaea coedmmmodo equate irure dolawor in reprehenderit.
-																			</p>
-																		</div>
-																		<div className="wt-likeunlike">
-																			<span>Did you find this useful?</span>
-																			<a href="/" className="wt-like"><i className="fa fa-thumbs-up"></i></a>
-																			<a href="/" className="wt-unlike"><i className="fa fa-thumbs-down"></i></a>
-																		</div>
-																	</div>
-																</li>
-															</ul>
-                                                            <div className="col-12 col-sm-12 col-md-12 col-lg-5 ">
-														    <div className="wt-howtoworkimg">
-															<figure>
-                                                                <Link to="/one-off-project"><button className="wt-btn">Start Now</button></Link>
-															</figure>
-														    </div>
-													        </div>
+															
+                                                            
 														</div>
 													</div>
 													<div className="col-12 col-sm-12 col-md-12 col-lg-5 float-left">

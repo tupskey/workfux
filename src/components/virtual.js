@@ -1,10 +1,14 @@
 import React, {useState} from "react";
 
+
+
 const Virtual = () => {
     const  [project, setProject] = useState('');
     const  [note, setNOte] = useState('')
 
-    
+    let top = new Date();
+	let  mine = top.getHours() * 3;
+	console.log(mine);
 
     return(
         <>
@@ -15,8 +19,7 @@ const Virtual = () => {
 							<div className="wt-innerbannercontent">
 							<div className="wt-title"><h2>Hire a Virtual Assistant</h2></div>
 							<ol className="wt-breadcrumb">
-								<li><a href="/">Home</a></li>
-								
+								<li><a href="/">Home</a></li>	
 							</ol>
 							</div>
 						</div>
@@ -107,8 +110,8 @@ const Virtual = () => {
 												</fieldset>
                                             <fieldset className="wt-registerformgroup">
                                             <div className="form-group">
-                                                <div class="wt-btnarea">
-													<a href="/" class="wt-btn">Submit Now</a>
+                                                <div className="wt-btnarea">
+													<a href="/" className="wt-btn">Submit Now</a>
 												</div>
                                             </div>
                                             </fieldset>
