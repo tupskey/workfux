@@ -1287,7 +1287,7 @@ table.wt-tablecategories tbody tr td figure img{
 .wt-tablecategories tr:hover th:first-child:before,
 .wt-tablecategories tr:hover td:first-child:before{height: 100%;}
 .wt-tablecategories tr:hover{background: #fcfcfc;}
-.wt-categoriesholder .wt-tablecategories tbody tr td .wt-actionbtn a{width: 60px;}
+.wt-categoriesholder .wt-tablecategories tbody tr td .wt-actionbtn a{width: 60px; text-decoration: none;}
 .uploadprogressbar{
 	left: 0;
 	top: 0;
@@ -2301,6 +2301,7 @@ li.collapsed .wt-msgbtns .wt-msgbtn i.lnr-chevron-up:before{content: "\e874";}
 	border: 0;
 	margin: 0;
 	line-height: 30px;
+	text-decoration: none;
 }
 .wt-yeartag .wt-tag a:hover{background: #00cc8d !important;}
 .wt-postedsilder{

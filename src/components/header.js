@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { NavLink} from 'react-router-dom'
+import { NavLink, Link} from 'react-router-dom'
 import { withRouter } from "react-router"
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
 
@@ -118,29 +118,13 @@ class Header extends Component {
 												<li className="menu-item-has-children page_item_has_children">
 													<a href="/">Home</a>
 												</li>
-                                                <li className="nav-item">
-                                                    <NavLink to="/"> Messages</NavLink>
-												</li>
+                                                
 												<li className="nav-item">
-                                                    <NavLink to="/"> About Us</NavLink>
+                                                    <NavLink to="/about"> About </NavLink>
 												</li>
                                             
 												<li className="menu-item-has-children page_item_has_children">
 													<NavLink to="/services">Services</NavLink>
-												</li>
-												<li className="menu-item-has-children page_item_has_children">
-													<a href="/">Orders</a>
-													<ul className="sub-menu">
-														<li>
-															<a href="userlisting.html">Active</a>
-														</li>
-														<li className="current-menu-item">
-															<a href="usersingle.html">Cancelled</a>
-														</li>
-                                                        <li className="current-menu-item">
-															<a href="usersingle.html">Completed</a>
-														</li>
-													</ul>
 												</li>
 											</ul>
 										</div>
@@ -219,7 +203,7 @@ class Header extends Component {
 										
 									</Modal>
                                 </div>   
-								<NavLink  to="/join" className="wt-btn">Join Now</NavLink>
+								<NavLink  to="/join" className="wt-btn">Join Now</NavLink> 
 									</div>
 									<div className="wt-userlogedin">
 										<figure className="wt-userimg">
@@ -237,60 +221,50 @@ class Header extends Component {
 													</NavLink>
 												</li>
 												<li>
-													<a href="dashboard-profile.html">
-														<span>My Profile</span>
+													<NavLink to="/hire-virtual-assistant">
+														<span>Virtual Assistant</span>
+													</NavLink>
+												</li>
+												<li className="menu-item-has-children page_item_has_children">
+												<a href="/">
+														<span>Profile</span>
 													</a>
+													<ul className="sub-menu">
+														<li><Link to="/profile">Profile Details</Link></li>
+														<li><Link to="/password">Password</Link></li>
+														<li><Link to="/email">Email Notification</Link></li>
+														<li><Link to="/delete">Delete Account</Link></li>													
+													</ul>
 												</li>
 												<li className="menu-item-has-children">
 													<a href="/">
 														<span>Orders</span>
 													</a>
 													<ul className="sub-menu">
-														<li><a href="dashboard-completejobs.html">Active Orders</a></li>
-														<li><a href="dashboard-canceljobs.html">Cancelled Orders</a></li>
-														<li><a href="dashboard-ongoingjob.html">Completed Orders</a></li>
-														<li><a href="dashboard-ongoingjob.html">Ongoing VA Orders</a></li>
-														
+													<li><Link to="/completed">Completed Orders</Link></li>
+													<li><Link to="/cancelled">Cancelled Orders</Link></li>
+													<li><Link to="/ongoing">Ongoing Orders</Link></li>
 													</ul>
+												</li>
+												<li>
+													<NavLink to="/workfuxservices">
+														<span>WorkFux Services</span>
+													</NavLink>
 												</li>
 												<li className="wt-notificationicon menu-item-has-children">
-													<a href="/">
-														<span>Messages</span>
-													</a>
-													<ul className="sub-menu">
-														<li><a href="dashboard-messages.html">Messages</a></li>
-														<li><a href="dashboard-messages2.html">Messages V 2</a></li>
-													</ul>
+													<NavLink to="/messages">
+													<span>Messages</span>
+													</NavLink>	
+												</li>
+												<li><NavLink to="/custom-offers">
+													<span>Custom Offers</span>
+													</NavLink>	
 												</li>
 												<li>
-													<a href="dashboard-invocies.html">
-														<span>Invoices</span>
-													</a>
-												</li>
-												<li>
-													<a href="dashboard-category.html">
-														<span>Category</span>
-													</a>
-												</li>
-												<li>
-													<a href="dashboard-packages.html">
-														<span>Packages</span>
-													</a>
-												</li>
-												<li>
-													<a href="dashboard-accountsettings.html">
-														<span>Account Settings</span>
-													</a>
-												</li>
-												<li>
-													<a href="dashboard-helpsupport.html">
-														<span>Help &amp; Support</span>
-													</a>
-												</li>
-												<li>
-													<a href="index.html">
-														<span>Logout</span>
-													</a>
+													<NavLink to="/">
+													<span>Logout</span>
+													</NavLink>
+													
 												</li>
 											</ul>
 										</nav>

@@ -10,10 +10,11 @@ const Services = () => {
 					<div className="row justify-content-md-center">
 						<div className="col-xs-12 col-sm-12 col-md-8 push-md-2 col-lg-6 push-lg-3">
 							<div className="wt-innerbannercontent">
-							<div className="wt-title"><h2>Our Services</h2></div>
+							<div className="wt-title"><h2>See How Services?</h2></div>
 							<ol className="wt-breadcrumb">
-								<li><a href="/">Home</a></li>
+								<li><a href="/">Home</a></li> {'/'}
 							</ol>
+							<li>How It Works</li>
 							</div>
 						</div>
 					</div>
@@ -51,10 +52,10 @@ const Services = () => {
 														 											 ination voluptate velite esse cillum dolore eu fugnulla pariatur lokaim urianewce animid
 																				</CardText>
 																				
-																				<Link to="/hire-virtual-assistant"><button className="wt-btn">Start Now</button></Link>
+																				<Link to="/hire-virtual-assistant"><button className="wt-btn">Get Started</button></Link>
 																	</CardBody>
 																</Card>
-										
+																
 																</div>
 															</div>
 														</div>
@@ -90,7 +91,7 @@ const Services = () => {
 														 											 ination voluptate velite esse cillum dolore eu fugnulla pariatur lokaim urianewce animid
 																				</CardText>
 																				
-																				<Link to="/hire-virtual-assistant"><button className="wt-btn">Start Now</button></Link>
+																				<Link to="/hire-virtual-assistant"><button className="wt-btn">Get Started</button></Link>
 																	</CardBody>
 																</Card>
 																</div>
