@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { NavLink, Link} from 'react-router-dom'
 import { withRouter } from "react-router"
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
+import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
 
 
 
@@ -136,7 +136,7 @@ class Header extends Component {
 										</figure>
 										
 								<div className="wt-loginoption">
-									<Button color="danger" className="wt-loginbtn"  id="wt-loginbtn" onClick={this.toggleModal}>Log in </Button>
+									<span style={{cursor: 'pointer', color: '#00adf2', margin: '5px'}} onClick={this.toggleModal}>Login </span>
 									<Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
 										<ModalHeader toggle={this.toggleModal}>
 											<span>Log in</span>
@@ -215,7 +215,7 @@ class Header extends Component {
 										</div>
 										<nav className="wt-usernav">
 											<ul>
-												<li className="menu-item-has-children page_item_has_children">
+												<li>
 													<NavLink to="/dashboard">
 														<span>Dashboard</span>
 													</NavLink>
@@ -225,16 +225,10 @@ class Header extends Component {
 														<span>Virtual Assistant</span>
 													</NavLink>
 												</li>
-												<li className="menu-item-has-children page_item_has_children">
-												<a href="/">
-														<span>Profile</span>
-													</a>
-													<ul className="sub-menu">
-														<li><Link to="/profile">Profile Details</Link></li>
-														<li><Link to="/password">Password</Link></li>
-														<li><Link to="/email">Email Notification</Link></li>
-														<li><Link to="/delete">Delete Account</Link></li>													
-													</ul>
+												<li>
+												<NavLink to="/profile">
+														<span>Profile Management</span>
+													</NavLink>
 												</li>
 												<li className="menu-item-has-children">
 													<a href="/">
@@ -251,7 +245,7 @@ class Header extends Component {
 														<span>WorkFux Services</span>
 													</NavLink>
 												</li>
-												<li className="wt-notificationicon menu-item-has-children">
+												<li className="wt-notificationicon">
 													<NavLink to="/messages">
 													<span>Messages</span>
 													</NavLink>	

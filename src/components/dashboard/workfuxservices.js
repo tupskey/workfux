@@ -64,10 +64,10 @@ const WorkFuxServices = () => {
 													</div>
 													<div className="wt-viewjobholder">
 														<ul>
-															<li><span><i className="fa fa-dollar-sign wt-viewjobdollar"></i>Professional</span></li>
+															<li><span><i className="fa fa-dollar wt-viewjobdollar"></i>Professional</span></li>
 															<li><span><em><img src={process.env.PUBLIC_URL + 'assets/images/flag/img-04.png'} alt="imog description" /></em>England</span></li>
 															<li><span><i className="fa fa-folder wt-viewjobfolder"></i>Type: Per Hour</span></li>
-															<li><span><i className="fa fa-clock wt-viewjobclock"></i>Duration: 03 Months</span></li>
+															<li><span><i className="fa fa-clock-o wt-viewjobclock"></i>Duration: 03 Months</span></li>
 															<li><span><i className="fa fa-tag wt-viewjobtag"></i>Job ID: gy3yV2Vm5u</span></li>
 															<li><a href="/" className="wt-clicklike wt-clicksave"><i className="fa fa-heart"></i> Save</a></li>
 															<li className="wt-btnarea"><a href="userlisting.html" className="wt-btn">Order Now</a></li>

@@ -32,10 +32,10 @@ const Ongoing = () => {
 															<h2>I want some customization and installation on wordpress</h2>
 														</div>
 														<ul className="wt-saveitem-breadcrumb wt-userlisting-breadcrumb">
-															<li><span className="wt-dashboraddoller"><i className="fa fa-dollar-sign"></i> Professional</span></li>
+															<li><span className="wt-dashboraddoller"><i className="fa fa-dollar"></i> Professional</span></li>
 															<li><span><img src={process.env.PUBLIC_URL + 'assets/images/flag/img-04.png'} alt="img description" /> England</span></li>
-															<li><a href="/" className="wt-clicksavefolder"><i className="far fa-folder"></i> Type: Per Fixed</a></li>
-															<li><span className="wt-dashboradclock"><i className="far fa-clock"></i> Duration: 15 Days</span></li>							
+															<li><a href="/" className="wt-clicksavefolder"><i className="fa fa-folder"></i> Type: Per Fixed</a></li>
+															<li><span className="wt-dashboradclock"><i className="fa fa-clock-o"></i> Duration: 15 Days</span></li>							
 														</ul>
 													</div>
 													<div className="wt-rightarea">

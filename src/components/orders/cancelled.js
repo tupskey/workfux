@@ -36,7 +36,7 @@ const Cancelled = () => {
 														<li><span class="wt-dashboraddoller"><i class="fa fa-dollar"></i> Professional</span></li>
 														<li><span><img src={process.env.PUBLIC_URL + 'assets/images/flag/img-04.png'} alt="im0g description" /> England</span></li>
 														<li><a href="/" class="wt-clicksavefolder"><i class="fa fa-folder"></i> Type: Per Fixed</a></li>
-														<li><span class="wt-dashboradclock"><i class="fa fa-clock"></i> Duration: 15 Days</span></li>				
+														<li><span class="wt-dashboradclock"><i class="fa fa-clock-o"></i> Duration: 15 Days</span></li>				
 													</ul>
 												</div>
 												<div class="wt-rightarea">
@@ -59,7 +59,7 @@ const Cancelled = () => {
 														<li><span class="wt-dashboraddoller"><i class="fa fa-dollar"></i> Professional</span></li>
 														<li><span><img src={process.env.PUBLIC_URL + 'assets/images/flag/img-04.png'} alt="im0g description" /> England</span></li>
 														<li><a href="/" class="wt-clicksavefolder"><i class="fa fa-folder"></i> Type: Per Fixed</a></li>
-														<li><span class="wt-dashboradclock"><i class="fa fa-clock"></i> Duration: 15 Days</span></li>				
+														<li><span class="wt-dashboradclock"><i class="fa fa-clock-o"></i> Duration: 15 Days</span></li>				
 													</ul>
 												</div>
 												<div class="wt-rightarea">

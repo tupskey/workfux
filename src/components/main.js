@@ -20,6 +20,7 @@ import Ongoing from "./orders/ongoing";
 import WorkFuxServices from "./dashboard/workfuxservices";
 import Messages from "./dashboard/messages";
 import Custom from "./dashboard/custom";
+import OrderDetails from "./orders/order-detail";
 
 class Main extends Component {
 
@@ -46,6 +47,7 @@ class Main extends Component {
                     <Route path="/workfuxservices" component={WorkFuxServices} />
                     <Route path="/messages" component={Messages} />
                     <Route path="/custom-offers" component={Custom} />
+                    <Route path="/order-details" component={OrderDetails} />
                 </Switch>
                 <Footer/>
             </>

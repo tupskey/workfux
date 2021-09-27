@@ -91,7 +91,7 @@ const Services = () => {
 														 											 ination voluptate velite esse cillum dolore eu fugnulla pariatur lokaim urianewce animid
 																				</CardText>
 																				
-																				<Link to="/hire-virtual-assistant"><button className="wt-btn">Get Started</button></Link>
+																				<Link to="/workfuxservices"><button className="wt-btn">Get Started</button></Link>
 																	</CardBody>
 																</Card>
 																</div>

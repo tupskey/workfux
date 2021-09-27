@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+import { Button } from "reactstrap";
 
 
 const About = () => {
@@ -89,8 +91,8 @@ const About = () => {
 													<p>Consectetur adipisicing elit amissed dotem eiusmod tempor incuntes utneai labore etdolore.</p>
 												</div>
 												<div className="wt-btnarea">
-													<a href="/" className="wt-btn wt-btnvtwo">Join Now</a>
-													<a href="/" className="wt-btn">What’s new</a>
+													<Link to="/join"><button className="wt-btn">Join Now</button></Link>
+													<Link><Button size="lg" color="danger">What’s new</Button></Link>
 												</div>
 											</div>
 										</div>

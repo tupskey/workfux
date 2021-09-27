@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const Completed = () => {
     return (
@@ -35,14 +36,14 @@ const Completed = () => {
                                                     
                                                     <ul className="wt-userlisting-breadcrumb">
                                                         <li><span><i className="fa fa-dollar"></i><i className="fa fa-dollar-sign"></i>300</span></li>
-                                                        <li><span className="wt-dashboradclock"><i className="fa fa-clock"></i> Duration: 30Days</span></li>	
+                                                        <li><span className="wt-dashboradclock"><i className="fa fa-clock-o"></i> Duration: 30Days</span></li>	
                                                         <li><span><i className="fa fa-calendar"></i> Jun 2017 - Jul 2017</span></li>
                                                         <li><span className="wt-stars"><span></span></span></li>
                                                     </ul>
                                                     <div className="wt-rightarea">
                                                         <div className="wt-btnarea">
                                                             <span> Project Complete</span>
-                                                            <a href="order-details.html" className="wt-btn">VIEW DETAILS</a>
+                                                            <Link to="/order-details"> <button className="wt-btn">VIEW DETAILS</button></Link>
                                                         </div>
                                                 
                                                     </div>
@@ -60,14 +61,14 @@ const Completed = () => {
                                     
                                                     <ul className="wt-userlisting-breadcrumb">
                                                         <li><span><i className="fa fa-dollar-sign"></i><i className="fa fa-dollar"></i>300</span></li>
-                                                        <li><span className="wt-dashboradclock"><i className="fa fa-clock"></i> Duration: 30Days</span></li>	
+                                                        <li><span><i className="fa fa-clock-o"></i> Duration: 30Days</span></li>	
                                                         <li><span><i className="fa fa-calendar"></i> Jun 2017 - Jul 2017</span></li>
                                                         <li><span className="wt-stars"><span></span></span></li>
                                                     </ul>
                                                     <div className="wt-rightarea">
                                                         <div className="wt-btnarea">
                                                             <span> Project Complete</span>
-                                                            <a href="order-details.html" className="wt-btn">VIEW DETAILS</a>
+                                                           <Link to="/order-details"> <button className="wt-btn">VIEW DETAILS</button></Link>
                                                         </div>
                                                     
                                                     </div>

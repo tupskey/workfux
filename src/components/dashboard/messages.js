@@ -115,8 +115,9 @@ const Messages = () => {
                                     <div className="wt-title">
                                         <h3><i className="fa fa-check-circle"></i> Valentine Mehring</h3>
                                         <span>5.0/5 (860 Feedback) <br />Member since May 30, 2013 <br/>@valentine20658</span>
-                                        <button className="wt-btn">View Profile</button>
+                                        
                                     </div>
+                                    <span className="wt-btn">View Profile</span>
                                 </div>
                             </div>
                         </div>

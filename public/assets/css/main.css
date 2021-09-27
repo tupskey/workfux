@@ -1293,6 +1293,7 @@ body.wt-login .wt-userlogedin{display: block;}
 	visibility:hidden;
 	position:absolute;
 	border-radius:5px;
+	text-decoration: none;
 }
 .wt-userlogedin:hover .wt-usernav{
 	top:100%;
@@ -1312,6 +1313,7 @@ body.wt-login .wt-userlogedin{display: block;}
 	border-top:2px solid;
 	-webkit-box-shadow: 5px 10px 20px 0 rgba(0,0,0,0.25);
     box-shadow: 5px 10px 20px 0 rgba(0,0,0,0.25);
+	text-decoration: none;
 }
 .wt-usernav ul li{
 	width:100%;
@@ -1319,6 +1321,7 @@ body.wt-login .wt-userlogedin{display: block;}
 	position:relative;
 	line-height:inherit;
 	list-style-type:none;
+	text-decoration: none;
 }
 .wt-usernav ul li + li{border-top:1px solid #eee;}
 .wt-usernav ul li a{
@@ -3383,6 +3386,7 @@ body.wt-login .wt-userlogedin{display: block;}
 	display: block;
 	color:#323232;
 	margin: 0 0 9px;
+	text-decoration: none;
 	font:400 14px/16px 'Poppins', Arial, Helvetica, sans-serif;
 }
 .wt-contenthead .wt-title h2{
@@ -3427,6 +3431,7 @@ body.wt-login .wt-userlogedin{display: block;}
 	margin: 3px;
 	font-size: 12px;
 	line-height: 28px;
+	text-decoration: none;
 }
 .wt-starsvtwo{
 	display: block;
@@ -3638,7 +3643,8 @@ body.wt-login .wt-userlogedin{display: block;}
 	margin: 0 0 35px;
 }
 .wt-skillsrequired .wt-tag{margin: 0 -5px -5px;}
-.wt-skillsrequired .wt-widgettag a{line-height: 36px;}
+.wt-skillsrequired .wt-widgettag a{line-height: 36px; 
+	text-decoration: none;}
 .wt-attachments{
 	float: left;
 	width: 100%;
@@ -3774,6 +3780,7 @@ body.wt-login .wt-userlogedin{display: block;}
 	border-radius: 4px;
 	display: inline-block;
 	vertical-align: middle;
+	text-decoration: none;
 	font:700 13px/48px 'Poppins', Arial, Helvetica, sans-serif;
 }
 .wt-clicksavebtn i{margin-right: 7px;}

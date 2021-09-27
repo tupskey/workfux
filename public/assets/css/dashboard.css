@@ -171,6 +171,7 @@ body{background:#f2f3fa;}
 	color: #767676;	
 	display: block;
 	line-height: inherit;
+	text-decoration: none;
 }
 .wt-navdashboard .menu-item-has-children .sub-menu li:hover a{color: #323232;}
 .wt-wrapper.wt-openmenu .wt-main { padding-left: 90px; }
@@ -705,7 +706,7 @@ body{background:#f2f3fa;}
 	position: relative;
 	font:400 16px/20px 'Poppins', Arial, Helvetica, sans-serif;;
 }
-.wt-tabstitle li a.active{background: #fff;}
+.wt-tabstitle li a.active{background: #fff; text-decoration: none; font-weight: bolder;}
 .wt-tabscontent{
 	float: left;
 	width: 70%;
