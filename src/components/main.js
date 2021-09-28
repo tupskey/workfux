@@ -1,5 +1,5 @@
 import React, { Component }  from "react";
-import { Route, Switch } from "react-router";
+import { Route, Switch, withRouter } from "react-router";
 import Footer from "./footer";
 import Header from "./header";
 import Home from "./home";
@@ -21,19 +21,30 @@ import WorkFuxServices from "./dashboard/workfuxservices";
 import Messages from "./dashboard/messages";
 import Custom from "./dashboard/custom";
 import OrderDetails from "./orders/order-detail";
+import Sidebar from "./sidebar";
 
 class Main extends Component {
 
     render () {
+        
+        
+       
+        
         return (
             <>
                 <Header/>
-                {/* <Head /> */}
+                
+                {
+                    window.location.pathname !== '/join' && window.location.pathname !== '/about'
+                     && window.location.pathname !== '/services' && window.location.pathname !== '/' &&
+                      <Sidebar />
+                }
                 <Switch>
+               
                     <Route exact path="/" component={Home} />
-                    <Route  path="/join" component={Register} />
-                    <Route path="/services" component={Services} />
-                    <Route path="/about" component={About} />
+                    <Route   path="/join" component={Register} />
+                    <Route  path="/services" component={Services} />
+                    <Route  path="/about" component={About} />
                     <Route path="/hire-virtual-assistant" component={Virtual} />
                     <Route path="/one-off-project" component={OneOff} />
                     <Route path="/dashboard"  component={Dashboard} />
@@ -49,6 +60,7 @@ class Main extends Component {
                     <Route path="/custom-offers" component={Custom} />
                     <Route path="/order-details" component={OrderDetails} />
                 </Switch>
+             
                 <Footer/>
             </>
         )
@@ -56,4 +68,4 @@ class Main extends Component {
 
 }
 
-export default Main;
+export default withRouter(Main);

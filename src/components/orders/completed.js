@@ -35,7 +35,7 @@ const Completed = () => {
                                                     </div>
                                                     
                                                     <ul className="wt-userlisting-breadcrumb">
-                                                        <li><span><i className="fa fa-dollar"></i><i className="fa fa-dollar-sign"></i>300</span></li>
+                                                        <li><span><i className="fa fa-dollar-sign"></i>300</span></li>
                                                         <li><span className="wt-dashboradclock"><i className="fa fa-clock-o"></i> Duration: 30Days</span></li>	
                                                         <li><span><i className="fa fa-calendar"></i> Jun 2017 - Jul 2017</span></li>
                                                         <li><span className="wt-stars"><span></span></span></li>
@@ -60,7 +60,7 @@ const Completed = () => {
                                                     </div>
                                     
                                                     <ul className="wt-userlisting-breadcrumb">
-                                                        <li><span><i className="fa fa-dollar-sign"></i><i className="fa fa-dollar"></i>300</span></li>
+                                                        <li><span><i className="fa fa-dollar"></i>300</span></li>
                                                         <li><span><i className="fa fa-clock-o"></i> Duration: 30Days</span></li>	
                                                         <li><span><i className="fa fa-calendar"></i> Jun 2017 - Jul 2017</span></li>
                                                         <li><span className="wt-stars"><span></span></span></li>
