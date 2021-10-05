@@ -231,9 +231,9 @@ class Header extends Component {
 													</NavLink>
 												</li>
 												<li className="menu-item-has-children">
-													<a href="/">
+													<Link to="/" >
 														<span>Orders</span>
-													</a>
+													</Link>
 													<ul className="sub-menu">
 													<li><Link to="/completed">Completed Orders</Link></li>
 													<li><Link to="/cancelled">Cancelled Orders</Link></li>

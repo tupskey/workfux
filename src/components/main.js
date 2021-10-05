@@ -36,7 +36,7 @@ class Main extends Component {
                 
                 {
                     window.location.pathname !== '/join' && window.location.pathname !== '/about'
-                     && window.location.pathname !== '/services' && window.location.pathname !== '/' &&
+                     && window.location.pathname !== '/services' && window.location.pathname !== '/' && window.innerWidth > 660 &&
                       <Sidebar />
                 }
                 <Switch>

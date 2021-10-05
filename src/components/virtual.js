@@ -15,14 +15,11 @@ const Virtual = () => {
 
     return(
         <>
-  
-<div className="wt-login">
-	
-
+  	<div className="wt-login" >
 	<div id="wt-wrapper" className="wt-wrapper wt-haslayout wt-innerbgcolor">
 		<div className="wt-contentwrapper">
 			<main id="wt-main" className="wt-main wt-haslayout">
-                <section className="wt-haslayout wt-dbsectionspace wt-main-section" >
+                <section className="wt-haslayout wt-dbsectionspace" >
 					<div className="row">
 						<div className="col-xs-12 col-sm-12 col-md-12 col-lg-8 col-xl-9">
 								<div className="wt-proposalholder">
@@ -178,9 +175,7 @@ const Virtual = () => {
 		</div>
 
 	</div>
-
-</div>
-
+    </div>
 
         </>
     );

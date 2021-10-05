@@ -124,13 +124,12 @@ class Register extends  Component {
 												</div>
 												<div className="wt-description">
 													<p>Consectetur adipisicing elit sed dotem eiusmod tempor incune utnaem labore etdolore maigna aliqua enim poskina</p>
+												
 												</div>
+												
+												
 											</div>
 											<div className="wt-joinforms">
-												<ul className="wt-joinsteps">
-													<li className="wt-active"><a href="/">01</a></li>
-													<li><a href="/">02</a></li>
-												</ul>
 												<form  className="wt-formtheme wt-formregister">
 													<fieldset className="wt-registerformgroup">
 														<div className="form-group wt-form-group-dropdown form-group-half">
@@ -180,24 +179,25 @@ class Register extends  Component {
 														
 													</fieldset>
 														<div className="form-group">
-															<button type="submit" disabled={!enabled} className="wt-btn">Join Now </button>
+															<button type="submit" disabled={!enabled} className="wt-btn" >Join Now </button>
 													</div>
 													</fieldset>
+													
 												   
 												</form>
-												<div className="wt-joinnowholder">
+												<div className="wt-joinnowholder" style={{width: '100%'}}>
 													<div className="wt-title">
-														<h4>Join Now With</h4>
+														<h6  className="wt-title"> Or join Now With </h6>
 													</div>
 													<div className="wt-description">
-														<p>Use a social account for faster login or easy registration to directly get in to your account and start a good business</p>
+														<p>a social account for faster login or easy registration to directly get in to your account and start a good business</p>
 													</div>
-													<ul className="wt-socialicons wt-iconwithtext">
-														<li className="wt-facebook"><a href="/"><i className="fa fa-facebook-f"></i><em>Facebook</em></a>
+													<div className="wt-socialicons wt-iconwithtext">
+														{/* <li className="wt-facebook"><a href="/"><i className="fab fa-facebook-f"></i><em>Facebook</em></a>
 														</li>
-													
-														<li className="wt-googleplus"><a href="/"><i className="fa fa-google-plus-g"></i><em>Google</em></a></li>
-													</ul>
+													 */}
+														<li className="wt-googleplus" ><a href="/"><i className="fab fa-google-plus-g"></i><em>Google</em></a></li>
+													</div>
 												</div>
 											</div>
 										</div>

@@ -1,9 +1,50 @@
 import { Link } from "react-router-dom";
 
 import {  Accordion, Card } from "react-bootstrap"
+import { useEffect, useState } from "react";
 
+function calculateTimeLeft() {
+	const year = new Date().getFullYear();
+	const difference = +new Date(`10/20/${year}`) - +new Date();
+	// console.log(difference)
+	let timeLeft = {};
+
+	if (difference > 0 ) {
+		timeLeft = {
+			days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+			hours: Math.floor((difference / (1000 * 60  * 60)) % 24),
+			minutes: Math.floor((difference / 1000 / 60) % 24),
+			seconds: Math.floor((difference / 1000) % 60)
+		};
+	}
+	return timeLeft
+}
 
 const OrderDetails = () => {
+const [timeLeft, setTimeLeft] = useState(calculateTimeLeft())
+
+useEffect(() => {
+	const id = setTimeout(() => {
+		setTimeLeft(calculateTimeLeft());
+	}, 1000)
+
+	return () => {
+		clearTimeout(id);
+	};
+})
+
+const timerComponents = []
+
+Object.keys(timeLeft).forEach(interval => {
+	if(!timeLeft[interval]) {
+		return;
+	}
+	timerComponents.push(
+		<span>
+			{timeLeft[interval]} {interval} {" "} 
+		</span>
+	);
+})
     return (
         <>
         
@@ -33,9 +74,9 @@ const OrderDetails = () => {
 									<div className="wt-proposalholder">
 										
 										<div className="wt-proposalhead">
-											<h2>REACT/JAVASCRIPT <br/>
-                                            COUNT <br/>
-                                        DOWN</h2>
+											<h2> {timerComponents.length ?  timerComponents :  <span>Time's up </span>} 
+											 {timerComponents.length ? <span>left</span> : ''}
+                                       </h2>
 										
 										</div>
 									

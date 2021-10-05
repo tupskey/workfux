@@ -25,7 +25,7 @@ const Cancelled = () => {
 									</div>
 									<div className="wt-managejobcontent wt-verticalscrollbar">
 										<div className="wt-userlistinghold wt-featured wt-userlistingvtwo">
-											<span className="wt-featuredtag wt-featuredtagcolor3"><img src={process.env.PUBLIC_URL + 'assets/images/featured.png'} alt="imIg description" data-tipso="Plus Member" className="template-content tipso_style" /></span>
+											<span className="wt-featuredtag wt-featuredtagcolor2"><img src={process.env.PUBLIC_URL + 'assets/images/featured.png'} alt="imIg description" data-tipso="Plus Member" className="template-content tipso_style" /></span>
 											<div className="wt-userlistingcontent wt-userlistingcontentvtwo">
 												<div className="wt-contenthead">
 													<div className="wt-title">
@@ -48,7 +48,7 @@ const Cancelled = () => {
 											</div>	
 										</div>
                                         <div className="wt-userlistinghold wt-featured wt-userlistingvtwo">
-											<span className="wt-featuredtag wt-featuredtagcolor3"><img src={process.env.PUBLIC_URL + 'assets/images/featured.png'} alt="imIg description" data-tipso="Plus Member" className="template-content tipso_style" /></span>
+											<span className="wt-featuredtag wt-featuredtagcolor2"><img src={process.env.PUBLIC_URL + 'assets/images/featured.png'} alt="imIg description" data-tipso="Plus Member" className="template-content tipso_style" /></span>
 											<div className="wt-userlistingcontent wt-userlistingcontentvtwo">
 												<div className="wt-contenthead">
 													<div className="wt-title">

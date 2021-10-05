@@ -18,14 +18,14 @@ import { Badge } from 'reactstrap';
 const Sidebar = () => {
     return (
       <div
-      id="wt-sidebarwrapper" className="wt-sidebarwrapper"     >
-        <CDBSidebar textColor="black" backgroundColor="white">
-          <CDBSidebarHeader   prefix={<i className="fa fa-bars fa-large"></i>}>
-          <div class="wt-userlogedin">
-                                    <figure class="wt-userimg">
+      id="wt-sidebarwrapper" className="wt-sidebarwrapper ">
+        <CDBSidebar textColor="black" backgroundColor="white" width="100%">
+          <CDBSidebarHeader   prefix={<i className="fa fa-bars"></i>}>
+          <div className="wt-userlogedin">
+                                    <figure className="wt-userimg">
                                         <img src={process.env.PUBLIC_URL + 'assets/images/user-img.jpg'} alt="imae description" />
                                     </figure>
-                                    <div class="wt-username">
+                                    <div className="wt-username">
                                         <h3> Louanne Mattioli</h3>
                                         <Badge color="success">Amento Tech</Badge>
                                     </div>
@@ -33,7 +33,7 @@ const Sidebar = () => {
           </CDBSidebarHeader>
    
           <CDBSidebarContent className="sidebar-content">
-          <CDBSidebarMenu>
+          <CDBSidebarMenu >
             
           <NavLink exact to="/dashboard" >
               <CDBSidebarMenuItem><i className="ti-dashboard"></i>Dashboard</CDBSidebarMenuItem>

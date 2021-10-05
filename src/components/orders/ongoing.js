@@ -4,12 +4,12 @@ const Ongoing = () => {
     return (
         <>
 
-<div id="wt-wrapper" className="wt-wrapper wt-haslayout">
+<div id="wt-wrapper" class="wt-wrapper wt-haslayout">
 	
-    <div className="wt-contentwrapper">
+    <div class="wt-contentwrapper">
 
         <main id="wt-main" className="wt-main wt-haslayout wt-innerbgcolor">
-            
+        
         <section className="wt-haslayout wt-dbsectionspace">
 					<div className="row">
 						<div className="col-xs-12 col-sm-12 col-md-12 col-lg-8 col-xl-9">
@@ -24,7 +24,7 @@ const Ongoing = () => {
 									</div>
 									<div className="wt-managejobcontent wt-verticalscrollbar mCustomScrollbar _mCS_1">
                                     <div className="wt-userlistinghold wt-featured wt-userlistingvtwo">
-												<span className="wt-featuredtag wt-featuredtagcolor3"><img src={process.env.PUBLIC_URL + 'assets/images/featured.png'} alt="img description" data-tipso="Plus Member" className="template-content tipso_style" /></span>
+												<span className="wt-featuredtag wt-featuredtagcolor2"><img src={process.env.PUBLIC_URL + 'assets/images/featured.png'} alt="img description" data-tipso="Plus Member" className="template-content tipso_style" /></span>
 												<div className="wt-userlistingcontent">
 													<div className="wt-contenthead">
 														<div className="wt-title">

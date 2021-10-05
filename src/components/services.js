@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {  Card, CardTitle, CardText, CardBody, } from "reactstrap";
+
+import {  Accordion, Card  } from "react-bootstrap";
 
 const Services = () => {
     return (
@@ -42,19 +43,51 @@ const Services = () => {
 																<div className="wt-description">
 																	<p>Dotem eiusmod tempor incune utnaem labore etdolore maigna aliqua eniina ilukita ylokem lokateise ination 
 																		voluptate velite esse cillum dolore eu fugnulla pariatur lokaim urianewce animid <a href="/">Learn more</a></p>
-																		
-																<Card  outline color="success">
-																	<CardBody>
-																		<CardTitle tag="h5">Description</CardTitle>
-																				<CardText>Dotem eiusmod tempor incune utnaem labore etdolore maigna aliqua eniina ilukita ylokem lokateise
-														 								ination voluptate velite esse cillum dolore eu fugnulla pariatur lokaim urianewce animid 
-																							 Dotem eiusmod tempor incune utnaem labore etdolore maigna aliqua eniina ilukita ylokem lokateise
-														 											 ination voluptate velite esse cillum dolore eu fugnulla pariatur lokaim urianewce animid
-																				</CardText>
-																				
-																				<Link to="/hire-virtual-assistant"><button className="wt-btn">Get Started</button></Link>
-																	</CardBody>
-																</Card>
+													<Accordion defaultActiveKey="0" flush>
+                                               				 <Card>
+
+                                                    <Card.Header>
+                                                        <Accordion.Toggle  eventKey="0">
+
+                                                    What you need to know about Hiring a virtual assistant
+                                                        </Accordion.Toggle>
+                                                    </Card.Header>
+                                                    <Accordion.Collapse eventKey="0">
+                                                    <Card.Body>
+                                                        This is a text that supporrts whatever we are doin in French
+                                                    </Card.Body>
+                                                    </Accordion.Collapse>
+                                                </Card>
+                                                <Card>
+
+                                                    <Card.Header>
+                                                        <Accordion.Toggle  eventKey="1">
+
+														What you need to know about Hiring a virtual assistant?
+                                                        </Accordion.Toggle>
+                                                    </Card.Header>
+                                                    <Accordion.Collapse eventKey="1">
+                                                    <Card.Body>
+                                                        This is a text that supporrts whatever we are doin in French
+                                                    </Card.Body>
+                                                    </Accordion.Collapse>
+                                                </Card>
+												<Card style={{marginBottom: '10px'}}>
+
+                                                    <Card.Header>
+                                                        <Accordion.Toggle  eventKey="2">
+
+														What you need to know about Hiring a virtual assistant
+                                                        </Accordion.Toggle>
+                                                    </Card.Header>
+                                                    <Accordion.Collapse eventKey="2">
+                                                    <Card.Body>
+                                                        This is a text that supporrts whatever we are doin in French
+                                                    </Card.Body>
+                                                    </Accordion.Collapse>
+                                                </Card>
+												<Link to="hire-virtual-assistant"><button className="wt-btn">Get Started</button></Link>
+                                            </Accordion>
 																
 																</div>
 															</div>
@@ -82,18 +115,53 @@ const Services = () => {
 																	<p>Dotem eiusmod tempor incune utnaem labore etdolore maigna aliqua eniina
 																		 ilukita ylokem lokateise ination voluptate velite esse cillum dolore eu fugnulla pariatur
 																		  lokaim urianewce animid learn <a href="/">more</a></p>
-																		  <Card  outline color="success">
-																	<CardBody>
-																		<CardTitle tag="h5">Description</CardTitle>
-																				<CardText>Dotem eiusmod tempor incune utnaem labore etdolore maigna aliqua eniina ilukita ylokem lokateise
-														 								ination voluptate velite esse cillum dolore eu fugnulla pariatur lokaim urianewce animid 
-																							 Dotem eiusmod tempor incune utnaem labore etdolore maigna aliqua eniina ilukita ylokem lokateise
-														 											 ination voluptate velite esse cillum dolore eu fugnulla pariatur lokaim urianewce animid
-																				</CardText>
-																				
-																				<Link to="/workfuxservices"><button className="wt-btn">Get Started</button></Link>
-																	</CardBody>
-																</Card>
+																		  <Accordion defaultActiveKey="0" flush>
+                                               				 <Card>
+
+                                                    <Card.Header>
+                                                        <Accordion.Toggle  eventKey="0">
+
+                                                  All About One time Project
+                                                        </Accordion.Toggle>
+                                                    </Card.Header>
+                                                    <Accordion.Collapse eventKey="0">
+                                                    <Card.Body>
+                                                        This is a text that supporrts whatever we are doin in French
+                                                    </Card.Body>
+                                                    </Accordion.Collapse>
+                                                </Card>
+                                                <Card>
+
+                                                    <Card.Header>
+                                                        <Accordion.Toggle  eventKey="1">
+
+                                                       When  you can have a one time Project
+                                                        </Accordion.Toggle>
+                                                    </Card.Header>
+                                                    <Accordion.Collapse eventKey="1">
+                                                    <Card.Body>
+                                                        This is a text that supporrts whatever we are doin in French
+                                                    </Card.Body>
+                                                    </Accordion.Collapse>
+                                                </Card>
+												<Card style={{marginBottom: '10px'}}>
+
+                                                    <Card.Header>
+                                                        <Accordion.Toggle  eventKey="2">
+
+                                                        Check Out the best place to execute your  one time project
+                                                        </Accordion.Toggle>
+                                                    </Card.Header>
+                                                    <Accordion.Collapse eventKey="2">
+                                                    <Card.Body>
+                                                        This is a text that supporrts whatever we are doin in French
+                                                    </Card.Body>
+                                                    </Accordion.Collapse>
+                                                </Card>
+												<Link to="/workfuxservices"><button className="wt-btn">Get Started</button></Link>
+                                            </Accordion>
+
+																
 																</div>
 															</div>
 															
