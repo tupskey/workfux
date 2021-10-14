@@ -6,6 +6,7 @@ const About = () => {
 
     return (
         <>
+	
                 <div className="wt-haslayout wt-innerbannerholder">
 				<div className="container">
 					<div className="row justify-content-md-center">

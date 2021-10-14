@@ -115,7 +115,7 @@ const Services = () => {
 																	<p>Dotem eiusmod tempor incune utnaem labore etdolore maigna aliqua eniina
 																		 ilukita ylokem lokateise ination voluptate velite esse cillum dolore eu fugnulla pariatur
 																		  lokaim urianewce animid learn <a href="/">more</a></p>
-																		  <Accordion defaultActiveKey="0" flush>
+													 <Accordion defaultActiveKey="0" flush>
                                                				 <Card>
 
                                                     <Card.Header>

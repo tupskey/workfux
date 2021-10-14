@@ -5,13 +5,17 @@ const Footer = () => {
    
     return(
         <>
+
+<div id="wt-wrapper" className="wt-wrapper wt-haslayout">
+		
+		<div className="wt-contentwrapper">
         <section className="wt-haslayaout wt-main-section wt-footeraboutus">
 					<div className="container">
 						<div className="row">
 							<div className="col-12 col-sm-6 col-md-3 col-lg-3">
 								<div className="wt-widgetskills">
 									<div className="wt-fwidgettitle">
-										<h3>By Skills</h3>
+										<h3>Our Skills</h3>
 									</div>
 									<ul className="wt-fwidgetcontent">
 										<li><a href="/">Software Engineer</a></li>
@@ -29,7 +33,7 @@ const Footer = () => {
 							<div className="col-12 col-sm-6 col-md-3 col-lg-3">
 								<div className="wt-widgetskill">
 									<div className="wt-fwidgettitle">
-										<h3>Skills In US</h3>
+										<h3>Partner with US</h3>
 									</div>
 									<ul className="wt-fwidgetcontent">
 										<li><a href="/">HTML Developers in US</a></li>
@@ -65,13 +69,13 @@ const Footer = () => {
 							<div className="col-12 col-sm-6 col-md-3 col-lg-3">
 								<div className="wt-widgetbylocation">
 									<div className="wt-fwidgettitle">
-										<h3>By Location</h3>
+										<h3>We accept</h3>
 									</div>
 									<ul className="wt-fwidgetcontent">
-										<li><a href="/">Switzerland</a></li>
-										<li><a href="/">Canada</a></li>
-										<li><a href="/">Germany</a></li>
-										<li><a href="/">United Kingdom</a></li>
+										<li><a href="/">Paypal</a></li>
+										<li><a href="/">Bitcoin</a></li>
+										<li><a href="/">Amazon card</a></li>
+										<li><a href="/">Google Pay</a></li>
 										<li><a href="/">Japan</a></li>
 										<li><a href="/">Sweden</a></li>
 										<li><a href="/">Australia</a></li>
@@ -167,7 +171,8 @@ const Footer = () => {
 					</div>
 				</div>
 			</footer>
-			
+			</div>
+		</div>
         </>
     )
     

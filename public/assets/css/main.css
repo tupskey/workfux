@@ -20,7 +20,7 @@
 */
 
 /* Theme Reset Style */
-@import url(https://fonts.googleapis.com/css?family=Poppins:400,500,600,700|Open+Sans:400,600,700);
+@import url(https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Open+Sans:300,400,600,700);
 * {
 	margin: 0px;
 	padding: 0px;
@@ -29,7 +29,7 @@ body {
 	color: #767676;
 	background: #fff;
 	overflow-x: hidden;
-	font:400 14px/23px 'Open Sans', Arial, Helvetica, sans-serif;
+	font:300 12px/23px 'Open Sans', Arial, Helvetica, sans-serif;
 }
 body h1,
 body h2,
@@ -58,7 +58,7 @@ h4 a,
 h5 a,
 h6 a { color: #0f0f0f; text-decoration: none}
 p a,
-p a:hover { text-decoration:underline;}
+p a:hover { text-decoration:none;}
 p {
 	margin: 0 0 20px;
 	line-height: 20px;
@@ -113,6 +113,7 @@ input[type="color"],
 .uneditable-input {
 	color: rgb(141, 138, 138);
 	outline: none;
+	border: 1px solid #28a745;
 	height: 50px;
 	background:#fff;
 	font-size: 14px;
@@ -120,10 +121,9 @@ input[type="color"],
 			box-shadow: none;
 	line-height: 18px;
 	padding: 10px 20px;
-	border-radius: 4px;
+	border-radius:29px;
 	display: inline-block;
 	vertical-align: middle;
-	border: 1px solid #dbdbdb;
 	text-transform: inherit;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -403,7 +403,7 @@ address { font-style: italic; }
 .wt-btn-sm {
 	padding: 0 20px;
 	line-height: 30px;
-	border-radius: 10px;
+	border-radius: 20px;
 }
 .wt-btn {
 	color: #fff;
@@ -412,7 +412,7 @@ address { font-style: italic; }
 	text-decoration: none;
 	position:relative;
 	text-align:center;
-	border-radius: 10px;
+	border-radius: 23px;
 	display: inline-block;
 	vertical-align: middle;
 	text-transform: uppercase;
@@ -427,7 +427,7 @@ address { font-style: italic; }
 	color:#fff;
 	background-color: none;
 }
-.wt-btn-lg { width: 100%; border-radius: 10px;}
+.wt-btn-lg { width: 100%; border-radius: 24px;}
 .wt-socialicons {
 	width: 100%;
 	float: left;
@@ -435,15 +435,18 @@ address { font-style: italic; }
 	list-style: none;
 	text-align:center;
 	line-height: 34px;
+	border-radius: 24px;
 }
 .wt-socialicons li {
 	float: left;
 	padding: 0 4px;
 	line-height: inherit;
 	list-style-type: none;
+	width: 100%;
+	border-radius: 20px;
 }
 .wt-socialicons li a {
-	width: 34px;
+	width: 100%;
 	height: 34px;
 	color: #fff;
 	display:block;
@@ -478,7 +481,7 @@ li.wt-tumblr a { background:#34465d; text-decoration: none}
 li.wt-yahoo a { background:#410093; text-decoration: none}
 .wt-inputwithicon.wt-googleplus .wt-icon,
 .wt-checkbox.wt-googleplus,
-li.wt-googleplus a { background:#dd4b39; text-decoration: none}
+li.wt-googleplus a { background:#dd4b39; text-decoration: none; width: 100%;}
 .wt-inputwithicon.wt-pinterestp .wt-icon,
 .wt-checkbox.wt-pinterestp,
 li.wt-pinterestp a { background:#bd081c; text-decoration: none}
@@ -549,7 +552,8 @@ li.wt-rss a { background:#ff6600; }
 .wt-socialiconsborder li.wt-googleplus a {
 	color: #dd4b39;
 	border: 1px solid #dd4b39;
-	text-decoration: none
+	text-decoration: none;
+	width: 100%;
 }
 .wt-socialiconsborder li.wt-pinterestp a {
 	color: #bd081c;
@@ -619,7 +623,7 @@ li.wt-rss a { background:#ff6600; }
 .wt-socialiconsborder li.wt-vimeo a i{ color: #1ab7ea; }
 .wt-socialiconsborder li.wt-tumblr a i{ color: #34465d; }
 .wt-socialiconsborder li.wt-yahoo a i{ color: #410093; }
-.wt-socialiconsborder li.wt-googleplus a i{ color: #dd4b39; }
+.wt-socialiconsborder li.wt-googleplus a i{ color: #dd4b39; width: 100%; }
 .wt-socialiconsborder li.wt-pinterestp a i{ color: #bd081c; }
 .wt-socialiconsborder li.wt-youtube a i{ color: #cd201f; }
 .wt-socialiconsborder li.wt-stumbleupon a i{ color: #eb4924; }
@@ -639,6 +643,7 @@ li.wt-rss a { background:#ff6600; }
 	text-align:center;
 	font-size: inherit;
 	line-height: inherit;
+	border-radius: 24px;
 }
 .wt-socialsharewithtext li a i{width: 34px;}
 .wt-socialicons li a:hover { color: #fff; }
@@ -667,7 +672,7 @@ li.wt-rss a { background:#ff6600; }
 .wt-socialiconssimple li.wt-facebook a i{color:#3b5999;}
 .wt-socialiconssimple li.wt-twitter a i{color:#55acee;}
 .wt-socialiconssimple li.wt-linkedin a i{color:#0077B5;}
-.wt-socialiconssimple li.wt-googleplus a i{color:#dd4b39;}
+.wt-socialiconssimple li.wt-googleplus a i{color:#dd4b39; width: 100%;}
 .wt-socialiconssimple li.wt-rss a i{color:#ff6600;}
 .wt-socialiconssimple li.wt-vimeo a i{color:#1ab7ea;}
 .wt-socialiconssimple li.wt-tumblr a i{color:#34465d;}
@@ -1016,6 +1021,8 @@ li.wt-rss a { background:#ff6600; }
 	width: auto;
 	vertical-align: top;
 	display: inline-block;
+	font-size: 16px;
+	font-family: 'Poppins', Arial, Helvetica, sans-serif
 }
 .wt-navigation ul li a{
 	color: #767676;
@@ -1050,11 +1057,13 @@ li.wt-rss a { background:#ff6600; }
 	display: table;
 	table-layout: fixed;
 }
-.wt-rightarea{float: right;}
+.wt-rightarea{float: right; font-size: 14px;
+font-family: Poppins, Arial, Helvetica, sans-serif}
 .wt-navigation > ul > li > a{
 	margin: 20px 0;
 	padding: 10px 13px;
 	text-decoration: none;
+	font-size: 14px;
 }
 .wt-navigation > ul > li > a:after{
 	bottom:0;
@@ -1086,7 +1095,7 @@ li.wt-rss a { background:#ff6600; }
 .wt-navigation > ul > li > .sub-menu > li.menu-item-has-children .sub-menu li:hover{background: #fff;}
 .wt-navigation > ul > li > .sub-menu > li.menu-item-has-children .sub-menu li:first-child{border-radius: 0 5px 0 0; text-decoration: none;}
 .wt-navigation > ul > li > .sub-menu > li.menu-item-has-children .sub-menu li:last-child{border-radius: 0 0 5px 0; text-decoration: none;}
-.wt-navigation ul li .sub-menu li + li a {border-top: 1px solid #eee;}
+.wt-navigation ul li .sub-menu li + li a {border-top: 1px solid #eee; text-decoration: none;}
 .wt-rightarea .wt-nav{
 	float: none;
 	width: auto;
@@ -1411,8 +1420,8 @@ body.wt-login .wt-userlogedin{display: block;}
 	-webkit-animation-duration: 7s;
 }
 .wt-bannermanimgtwo{
-		animation-duration: 12s;
-	-webkit-animation-duration: 12s;
+		animation-duration: 4s;
+	-webkit-animation-duration: 4s;
 }
 .wt-bannercontent{
 	float: left;
@@ -4745,10 +4754,12 @@ body.wt-login .wt-userlogedin{display: block;}
 .wt-footercol{
 	float: left;
 	width: 100%;
+	text-align: center;
 }
 .wt-footeraboutus{
 	float: left;
 	width: 100%;
+	text-align: center;
 	padding: 60px 0;
 	background:#f7f7f7;
 	margin: 20px 0 -20px;
@@ -4784,6 +4795,7 @@ body.wt-login .wt-userlogedin{display: block;}
 	display: block;
 	color: #767676;
 	line-height: inherit;
+	text-decoration: none;
 }
 .wt-fwidgetcontent li:hover a,
 .wt-fwidgetcontent li a:focus{color: #323232;padding-left:10px; }

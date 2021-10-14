@@ -106,7 +106,7 @@ class Header extends Component {
 					<div className="container-fluid">
 						<div className="row">
 							<div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-								<strong className="wt-logo"><a href="index.html"><img src={process.env.PUBLIC_URL + 'assets/images/logo.png'}alt="company logo here" /></a></strong>
+								<strong className="wt-logo"><NavLink to="/"><img src={process.env.PUBLIC_URL + 'assets/images/logo.png'}alt="company logo here" /></NavLink></strong>
 								<div className="wt-rightarea">
 									<nav id="wt-nav" className="wt-nav navbar-expand-lg">
 										<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -224,20 +224,14 @@ class Header extends Component {
 													<NavLink to="/hire-virtual-assistant">
 														<span>Virtual Assistant</span>
 													</NavLink>
-												</li>
-												<li>
-												<NavLink to="/profile">
-														<span>Profile Management</span>
-													</NavLink>
-												</li>
-												<li className="menu-item-has-children">
+												</li><li className="menu-item-has-children">
 													<Link to="/" >
 														<span>Orders</span>
 													</Link>
-													<ul className="sub-menu">
-													<li><Link to="/completed">Completed Orders</Link></li>
-													<li><Link to="/cancelled">Cancelled Orders</Link></li>
-													<li><Link to="/ongoing">Ongoing Orders</Link></li>
+													<ul className="sub-menu">						
+													<li><Link to="/ongoing"  style={{textDecoration: 'none'}}>Ongoing Orders</Link></li>
+													<li><Link to="/completed"  style={{textDecoration: 'none'}}>Completed Orders</Link></li>
+													<li><Link to="/cancelled"  style={{textDecoration: 'none'}}>Cancelled Orders</Link></li>
 													</ul>
 												</li>
 												<li>
@@ -253,6 +247,16 @@ class Header extends Component {
 												<li><NavLink to="/custom-offers">
 													<span>Custom Offers</span>
 													</NavLink>	
+												</li>
+												<li>
+													<NavLink to="/invoices">
+														<span>Invoices</span>
+													</NavLink>
+												</li>
+												<li>
+												<NavLink to="/profile">
+														<span>Profile Management</span>
+													</NavLink>
 												</li>
 												<li>
 													<NavLink to="/">

@@ -22,6 +22,8 @@ import Messages from "./dashboard/messages";
 import Custom from "./dashboard/custom";
 import OrderDetails from "./orders/order-detail";
 import Sidebar from "./sidebar";
+import Invoices from "./dashboard/invoices";
+import Register2 from "./registration2";
 
 class Main extends Component {
 
@@ -36,6 +38,7 @@ class Main extends Component {
                 
                 {
                     window.location.pathname !== '/join' && window.location.pathname !== '/about'
+                    && window.location.pathname !== '/continue-reg'
                      && window.location.pathname !== '/services' && window.location.pathname !== '/' && window.innerWidth > 660 &&
                       <Sidebar />
                 }
@@ -58,7 +61,9 @@ class Main extends Component {
                     <Route path="/workfuxservices" component={WorkFuxServices} />
                     <Route path="/messages" component={Messages} />
                     <Route path="/custom-offers" component={Custom} />
+                    <Route path="/invoices" component={Invoices} />
                     <Route path="/order-details" component={OrderDetails} />
+                    <Route path="/continue-reg"  component={Register2} />
                 </Switch>
              
                 <Footer/>

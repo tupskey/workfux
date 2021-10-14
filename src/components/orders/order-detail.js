@@ -41,7 +41,7 @@ Object.keys(timeLeft).forEach(interval => {
 	}
 	timerComponents.push(
 		<span>
-			{timeLeft[interval]} {interval} {" "} 
+			{timeLeft[interval]}{":"} 
 		</span>
 	);
 })
@@ -51,7 +51,7 @@ Object.keys(timeLeft).forEach(interval => {
 	<div id="wt-wrapper" className="wt-wrapper wt-haslayout">	
 		<div className="wt-contentwrapper">
             <main id="wt-main" className="wt-main wt-haslayout wt-innerbgcolor">
-                <div className="wt-haslayout wt-main-section">
+                <div className="wt-haslayout  wt-dbsectionspace">
 					<div className="container">
 						<div className="row">
 							<div id="wt-twocolumns" className="wt-twocolumns wt-haslayout">
@@ -74,8 +74,8 @@ Object.keys(timeLeft).forEach(interval => {
 									<div className="wt-proposalholder">
 										
 										<div className="wt-proposalhead">
-											<h2> {timerComponents.length ?  timerComponents :  <span>Time's up </span>} 
-											 {timerComponents.length ? <span>left</span> : ''}
+											<h2> You will get your project in {timerComponents.length ?  timerComponents :  <span>Time's up </span>} 
+											 
                                        </h2>
 										
 										</div>
@@ -102,11 +102,11 @@ Object.keys(timeLeft).forEach(interval => {
 										</div>
 
                                         <div className="wt-skillsrequired">
-                                            <div className="wt-title">
-                                                <h3>Talk with the Admin</h3>
-                                            </div>
+                                            
                                             <div className="wt-tag wt-widgettag">
                                               <Link to="/messages"><span>Chats with Admin</span></Link>
+											  <Link to="/" style={{backgroundColor: 'green', color: 'white'}}><span>Request for Modification</span></Link>
+											  <Link to="/"  style={{backgroundColor: 'red', color: 'white'}}><span>Request for Cancellation</span></Link>
                                             </div>
                                         </div>
                                         <div className="wt-attachments">
@@ -170,14 +170,14 @@ Object.keys(timeLeft).forEach(interval => {
 										
 										<div className="wt-widget wt-sharejob">
 											<div className="wt-widgettitle">
-												<h2>Share Workfux To Friends</h2>
+												<h2>Refer a friend </h2>
 											</div>
 											<div className="wt-widgetcontent">
 												<ul className="wt-socialiconssimple">
-													<li className="wt-facebook"><a href="/"><i className="fa fa-facebook-f"></i>Share on Facebook</a></li>
-													<li className="wt-twitter"><a href="/"><i className="fa fa-twitter"></i>Share on Twitter</a></li>
+													<li className="wt-facebook"><a href="/"><i className="fab fa-facebook-f"></i>Share on Facebook</a></li>
+													<li className="wt-twitter"><a href="/"><i className="fab fa-twitter"></i>Share on Twitter</a></li>
 													
-													<li className="wt-googleplus"><a href="/"><i className="fa fa-google-plus"></i>Share on Google Plus</a></li>
+													<li className="wt-googleplus"><a href="/"><i className="fab fa-google-plus"></i>Share on Google Plus</a></li>
 												</ul>
 											</div>
 										</div>

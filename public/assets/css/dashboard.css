@@ -157,7 +157,7 @@ body{background:#f2f3fa;}
 	position: absolute;
 	border-top:1px dashed #cdcdcd;
 }
-.wt-navdashboard .menu-item-has-children .sub-menu{ background: none; }
+.wt-navdashboard .menu-item-has-children .sub-menu{ background: none; text-decoration: none;}
 .wt-navdashboard .menu-item-has-children .sub-menu li{
 	border: 0;
 	width: 100%;
@@ -165,6 +165,7 @@ body{background:#f2f3fa;}
 	padding-left:23px;
 	line-height: 39px;
 	position: relative;
+	text-decoration: none;
 }
 .wt-navdashboard .menu-item-has-children .sub-menu li a{
 	color: #767676;	

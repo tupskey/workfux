@@ -137,7 +137,34 @@ const Dashboard = () => {
 			</section>
 			
 			<section className="wt-haslayout wt-dbsectionspace wt-padding-add-top wt-moredetailsholder">
-				<div className="row">
+				<div className="row">					
+				<div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">
+						<div className="wt-insightsitem wt-dashboardbox">
+							<figure className="wt-userlistingimg">
+								<img src={process.env.PUBLIC_URL + '/assets/images/thumbnail/img-22.png'} alt="thum description" className="mCS_img_loaded" />
+							</figure>
+							<div className="wt-insightdetails">
+								<div className="wt-title">
+									<h3>Fund Wallet {''} <span style={{color: 'green'}}>$</span></h3>
+									<a href="/">Click To View</a>
+								</div>													
+							</div>
+						</div>
+					</div>
+					
+					<div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">
+						<div className="wt-insightsitem wt-dashboardbox">
+							<figure className="wt-userlistingimg">
+								<img src={process.env.PUBLIC_URL + 'assets/images/thumbnail/img-20.png'} alt="thmb description" className="mCS_img_loaded" />
+							</figure>
+							<div className="wt-insightdetails">
+								<div className="wt-title">
+									<h3>Wallet Balance</h3>
+									<a href="/">Click To View</a>
+								</div>													
+							</div>	
+						</div>
+					</div>	
 					<div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">
 						<div className="wt-insightsitem wt-dashboardbox wt-insightnoticon">
 							<figure className="wt-userlistingimg">
@@ -150,20 +177,7 @@ const Dashboard = () => {
 								</div>													
 							</div>	
 						</div>
-					</div>
-					<div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">
-						<div className="wt-insightsitem wt-dashboardbox">
-							<figure className="wt-userlistingimg">
-								<img src={process.env.PUBLIC_URL + 'assets/images/thumbnail/img-20.png'} alt="thmb description" className="mCS_img_loaded" />
-							</figure>
-							<div className="wt-insightdetails">
-								<div className="wt-title">
-									<h3>Latest Proposals</h3>
-									<a href="/">Click To View</a>
-								</div>													
-							</div>	
-						</div>
-					</div>												
+					</div>											
 					<div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">
 						<div className="wt-insightsitem wt-dashboardbox">
 							<ul className="wt-countersoon" data-date="May 14 2019 20:20:22">
@@ -198,19 +212,6 @@ const Dashboard = () => {
 									<a href="assistant.html">Click To View</a>
 								</div>													
 							</div>	
-						</div>
-					</div>						
-					<div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">
-						<div className="wt-insightsitem wt-dashboardbox">
-							<figure className="wt-userlistingimg">
-								<img src={process.env.PUBLIC_URL + '/assets/images/thumbnail/img-22.png'} alt="thum description" className="mCS_img_loaded" />
-							</figure>
-							<div className="wt-insightdetails">
-								<div className="wt-title">
-									<h3>View Saved Items</h3>
-									<a href="/">Click To View</a>
-								</div>													
-							</div>
 						</div>
 					</div>
 				</div>

@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 
 const Password = () => {
     return (
@@ -16,8 +16,14 @@ const Password = () => {
                             <div className="wt-dashboardtabs">
 									<ul className="wt-tabstitle nav navbar-nav">
 									<li className="nav-item">
-											<a className="active" data-toggle="tab" href="#wt-security">Password</a>
+											<Link to="/profile"  style={{textDecoration: 'none', fontWeight: 'semi-bold'}}>Profile Management</Link>
+									</li>
+										<li className="nav-item">
+											<a className="active" data-toggle="tab" href="#wt-security">Password Update</a>
 										</li>
+										<li className="nav-item">
+											<Link  to="/email" style={{textDecoration: 'none', color:'rgb(141, 138, 138)'}}>Email Update</Link>
+									</li>
 										</ul>
 									
 								</div>
@@ -26,7 +32,7 @@ const Password = () => {
 										
                                     <div className="wt-changepassword">
 											<div className="wt-tabscontenttitle">
-												<h2>Change Your Password</h2>
+												<h2 style={{fontWeight:'bolder'}}>Change Your Password</h2>
 											</div>
 											<form className="wt-formtheme wt-userform">
 												<fieldset>

@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 
 const Email = () => {
     return (
@@ -16,7 +16,13 @@ const Email = () => {
                             <div className="wt-dashboardtabs">
 									<ul className="wt-tabstitle nav navbar-nav">
 									<li className="nav-item">
-											<a className="active" data-toggle="tab" href="#wt-security">Email Notifications</a>
+											<Link to="/profile" style={{textDecoration: 'none', color:'rgb(141, 138, 138)'}}>Profile Management</Link>
+									</li>
+									<li className="nav-item">
+											<Link  to="/password" style={{textDecoration: 'none', color:'rgb(141, 138, 138)'}}>Password Update</Link>
+									</li>
+									<li className="nav-item">
+											<a className="active" data-toggle="tab" href="#wt-security">Email Notification</a>
 										</li>
 										</ul>
 									
@@ -26,7 +32,7 @@ const Email = () => {
 										
                                     <div className="wt-emailnoti">
 											<div className="wt-tabscontenttitle">
-												<h2>Manage Email Notifications</h2>
+												<h2 style={{fontWeight:'bolder'}}>Manage Email Notifications</h2>
 											</div>
 											<div className="wt-settingscontent">
 												<div className="wt-description">

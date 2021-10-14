@@ -15,7 +15,7 @@ const Ongoing = () => {
 						<div className="col-xs-12 col-sm-12 col-md-12 col-lg-8 col-xl-9">
 							<div className="wt-dashboardbox">
 								<div className="wt-dashboardboxtitle">
-									<h2>Posted Jobs</h2>
+									<h2>Ongoing Jobs</h2>
 								</div>
 								<div className="wt-dashboardboxcontent wt-jobdetailsholder">
                                 <div className="wt-freelancerholder">
@@ -43,7 +43,7 @@ const Ongoing = () => {
 															<a href="/" className="wt-btn">VIEW DETAILS</a>
 														</div>
 														<div className="wt-hireduserstatus">
-															<h4>Hired</h4><span>Terrence Tynan</span>
+															<h4>$200</h4><span>Terrence Tynan</span>
 															<ul className="wt-hireduserimgs">
 																<li><figure><img src={process.env.PUBLIC_URL + 'assets/images/user/userlisting/img-05.jpg'} alt="img description" /></figure></li>
 															</ul>

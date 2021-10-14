@@ -23,7 +23,8 @@ const Home = () => {
 										<h1><span>Hire a virtual Assistant</span> for $500 per month!</h1>
 									</div>
 									<div className="wt-description">
-										<p>You need an helping hand for your project</p>
+										<p>Meet talents that can handle your one-off projects… 
+											save time, decongest your office and save money…</p>
 									</div>
 								</div>
 								<form className="wt-formtheme wt-formbanner">
@@ -259,6 +260,7 @@ const Home = () => {
 						</div>
 					</div>
 				</section>
+				
 				
 
 				

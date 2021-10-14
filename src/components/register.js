@@ -1,5 +1,6 @@
 import React, { Component} from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { withRouter } from "react-router";
 
 const validateForm = errors => {
 	let valid = true;
@@ -41,6 +42,7 @@ class Register extends  Component {
 			firstname: '',
 			lastname: '',
 			password: '',
+			username: '',
 			confirmpassword: '',
 			email: '',
 			status: 'company',
@@ -48,10 +50,13 @@ class Register extends  Component {
 				firstname: '',
 				lastname: '',
 				email: '',
+				username: '',
 				password: '',
 				confirmpassword: ''
 			}
 		}
+		this.handleChange = this.handleChange.bind(this)
+		this.handleSubmit = this.handleSubmit.bind(this)
 	}
 
 	handleChange = event => {
@@ -67,6 +72,10 @@ class Register extends  Component {
 			case 'lastname':
 				errors.lastname = value.length < 3 ? 'Lastname must be greater than 3 characters': '' ||
 				 name === '' ? 'Please Enter your lastname' : ''
+			break;
+			case 'username':
+				errors.username = value.length < 3 ? 'username must be greater than 3 characters': '' ||
+				 name === '' ? 'Please Enter your username' : ''
 			break;
 			case 'email':
 				errors.email = validEmail(value)  ? 'Please Enter a Valid Email Adrress' : '' 
@@ -86,10 +95,15 @@ class Register extends  Component {
 		})
 	}
 
+	handleSubmit (event) {
+		event.preventDefault();
+		this.props.history.push('/continue-reg')
+	}
+
 	render () {
 	
 		const {errors} = this.state;
-		const forme = this.state.firstname && this.state.lastname  &&  this.state.password && this.state.confirmpassword  && this.state.email;
+		const forme =  this.state.email 
 		const enabled = !validateForm(forme);
 	
 		
@@ -120,25 +134,29 @@ class Register extends  Component {
 										<div className="wt-registerformmain">
 											<div className="wt-registerhead">
 												<div className="wt-title">
-													<h3>Join For a Good Start</h3>
+													<h3>Get your free account</h3>
 												</div>
 												<div className="wt-description">
 													<p>Consectetur adipisicing elit sed dotem eiusmod tempor incune utnaem labore etdolore maigna aliqua enim poskina</p>
 												
 												</div>
 												
-												
 											</div>
+											<div className="wt-socialicons wt-iconwithtext" style={{marginBottom: '10px'}}>
+														{/* <li className="wt-facebook"><a href="/"><i className="fab fa-facebook-f"></i><em>Facebook</em></a>
+														</li>
+													 */}
+														<li className="wt-googleplus" >< Link to="/" style={{borderRadius: '25px'}}><i className="fab fa-google-plus-g" style={{borderRadius: '25px'}}></i><em>Continue with Google</em></Link></li>
+											</div>
+											<div className="wt-description">
+													<p style={{textAlign: 'center'}}><strong>or</strong></p>
+												
+												</div>
 											<div className="wt-joinforms">
+												
 												<form  className="wt-formtheme wt-formregister">
 													<fieldset className="wt-registerformgroup">
-														<div className="form-group wt-form-group-dropdown form-group-half">
-															<span className="wt-select">
-																<select  onChange={this.handleChange} >
-																	<option value="Mr">mr.</option>
-																	<option value="Mrs">mrs</option>
-																</select>
-															</span>
+														{/* <div className="form-group wt-form-group-dropdown form-group-half">
 															<input type="text" name="firstname"  className="form-control" value={this.state.firstname} onChange={this.handleChange} placeholder="First Name" />
 															{
 																errors.firstname.length > 0 && 
@@ -151,54 +169,26 @@ class Register extends  Component {
 																errors.lastname.length > 0 && 
 																<span  className="errors">{errors.lastname}</span>
 															}
-														</div>
+														</div> */}
 														<div className="form-group">
-															<input type="text" name="email" value={this.state.email} className="form-control" onChange={this.handleChange} placeholder="Email" />
+															<input type="email" name="email" value={this.state.email} className="form-control" onChange={this.handleChange} placeholder="work email address" />
 															{
 																errors.email.length > 0 && 
 																<span  className="errors">{errors.email}</span>
 															}
 														</div>
 														
-			
-														<div className="form-group form-group-half">
-															<input type="password" name="password" value={this.state.password} className="form-control" onChange={this.handleChange} placeholder="Password*" />
-															{
-																errors.password.length > 0 && 
-																<span  className="errors">{errors.password}</span>
-															}
-														</div>
-														<div className="form-group form-group-half">
-															<input type="password" name="confirmpassword" value={this.state.confirmpassword} className="form-control" onChange={this.handleChange} placeholder="Confirm Password*" />
-															{
-																errors.confirmpassword.length > 0 && 
-																<span  className="errors">{errors.confirmpassword}</span>
-															}
-														</div>
 														<fieldset className="wt-formregisterstart">
 														
 													</fieldset>
 														<div className="form-group">
-															<button type="submit" disabled={!enabled} className="wt-btn" >Join Now </button>
+															<button style={{width: '100%'}} type="submit" disabled={!enabled} className="wt-btn" onClick={this.handleSubmit} >Continue with email </button>
 													</div>
 													</fieldset>
 													
 												   
 												</form>
-												<div className="wt-joinnowholder" style={{width: '100%'}}>
-													<div className="wt-title">
-														<h6  className="wt-title"> Or join Now With </h6>
-													</div>
-													<div className="wt-description">
-														<p>a social account for faster login or easy registration to directly get in to your account and start a good business</p>
-													</div>
-													<div className="wt-socialicons wt-iconwithtext">
-														{/* <li className="wt-facebook"><a href="/"><i className="fab fa-facebook-f"></i><em>Facebook</em></a>
-														</li>
-													 */}
-														<li className="wt-googleplus" ><a href="/"><i className="fab fa-google-plus-g"></i><em>Google</em></a></li>
-													</div>
-												</div>
+											
 											</div>
 										</div>
 										<div className="wt-registerformfooter">
@@ -217,4 +207,4 @@ class Register extends  Component {
 }
 
 	
-export default Register;
+export default withRouter(Register);

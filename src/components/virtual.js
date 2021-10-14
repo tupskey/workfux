@@ -85,7 +85,11 @@ const Virtual = () => {
 													</span>
                                             </div>
                                             <div className="form-group">
-                                                <textarea className="form-control" placeholder="Add Description*"></textarea>
+                                            <fieldset>
+												<div class="form-group">
+													<textarea id="wt-tinymceeditor" className="form-control wt-tinymceeditor" placeholder="Add Job Detail Here"></textarea>
+												</div>
+											</fieldset>
                                             </div>
                                         </fieldset>
                                         <fieldset>

@@ -19,9 +19,9 @@ const Sidebar = () => {
     return (
       <div
       id="wt-sidebarwrapper" className="wt-sidebarwrapper ">
-        <CDBSidebar textColor="black" backgroundColor="white" width="100%">
-          <CDBSidebarHeader   prefix={<i className="fa fa-bars"></i>}>
-          <div className="wt-userlogedin">
+        <CDBSidebar textColor="black" backgroundColor="white" width="100%" defaultOpen>
+          <CDBSidebarHeader   prefix={<i className="fa fa-bars"></i>}> 
+          <div className="wt-userlogedin mCS_img_loaded" >
                                     <figure className="wt-userimg">
                                         <img src={process.env.PUBLIC_URL + 'assets/images/user-img.jpg'} alt="imae description" />
                                     </figure>
@@ -39,9 +39,7 @@ const Sidebar = () => {
               <CDBSidebarMenuItem><i className="ti-dashboard"></i>Dashboard</CDBSidebarMenuItem>
             </NavLink>
             
-            <NavLink exact to="/profile" >
-              <CDBSidebarMenuItem><i className="ti-briefcase"></i>Profile page</CDBSidebarMenuItem>
-            </NavLink>
+            
             <NavLink exact to="/order-details" >
               <CDBSidebarMenuItem><i className="ti-package"></i>All Orders</CDBSidebarMenuItem>
             </NavLink>
@@ -51,12 +49,17 @@ const Sidebar = () => {
             <NavLink exact to="/custom-offers" >
               <CDBSidebarMenuItem><i className="ti-heart"></i>Custom Offers</CDBSidebarMenuItem>
             </NavLink>
+            <NavLink exact to="/invoices" >
+              <CDBSidebarMenuItem><i className="ti-file"></i>Incoices</CDBSidebarMenuItem>
+            </NavLink>
             <NavLink exact to="workfuxservices" >
               <CDBSidebarMenuItem><i className="ti-layers"></i>
                 Category Services
               </CDBSidebarMenuItem>
             </NavLink>
- 
+            <NavLink exact to="/profile" >
+              <CDBSidebarMenuItem><i className="ti-briefcase"></i>Profile page</CDBSidebarMenuItem>
+            </NavLink>
             <NavLink
               exact
               to="/">

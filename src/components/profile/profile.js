@@ -1,5 +1,5 @@
-
-
+import { Link } from 'react-router-dom'
+import {  Accordion, Card  } from "react-bootstrap"; 
 
 const Profile = () => {
 
@@ -21,7 +21,13 @@ const Profile = () => {
 									<ul className="wt-tabstitle nav navbar-nav">
 									<li className="nav-item">
 											<a className="active" data-toggle="tab" href="#wt-security">Profile Management</a>
-										</li>
+									</li>
+									<li className="nav-item">
+											<Link  to="/password" style={{textDecoration: 'none', color:'rgb(141, 138, 138)'}}>Password Update</Link>
+									</li>
+									<li className="nav-item">
+											<Link  to="/email" style={{textDecoration: 'none', color:'rgb(141, 138, 138)'}}>Email Update</Link>
+									</li>
 										
 									</ul>
 									
@@ -33,7 +39,18 @@ const Profile = () => {
 											<div className="wt-tabscontenttitle">
 												<h2 style={{fontWeight:'bolder'}}>Profile Update </h2>
 											</div>
-											<form className="wt-formtheme wt-userform">
+
+											<Accordion defaultActiveKey="0" flush>
+                                            	 <Card>
+
+                                                    <Card.Header  style={{backgroundColor: 'white'}}>
+                                                        <Accordion.Toggle  eventKey="0"  style={{backgroundColor: 'white'}}>
+															<strong>
+															Continue your registration as an Individual</strong>
+                                                        </Accordion.Toggle>
+                                                    </Card.Header>
+                                                    <Accordion.Collapse eventKey="0">
+                                                    <Card.Body><form className="wt-formtheme wt-userform">
 												<div className="form-group">
 												<input type="text" placeholder="FIRST NAME" className="" name="" id="" style={{width: '100%'}} />
 												</div>
@@ -51,96 +68,48 @@ const Profile = () => {
 														<div className="form-group">
 															<input type="text" placeholder="PHONE NUMBER" className="" name="" id="" style={{width: '100%'}} />
 															</div>
-															
-												<fieldset>
-													<div className="form-group form-group-half">
-														<span className="wt-select">
-															<select>
-																<option value="">Select System Language</option>
-																<option value="">English</option>
-																<option value="">French</option>
-																<option value="">Spanish</option>
-																<option value="">Japanese</option>
-																<option value="">Arabic </option>
-															</select>
-														</span>
-													</div>
-													<div className="form-group form-group-half">
-														<span className="wt-select">
-															<select>
-																<option value="">Select Currency</option>
-																<option value="">Brazilian Real</option>
-																<option value="">US Dollar</option>
-																<option value="">Yuan Renminbi</option>
-																<option value="">Colombian Peso</option>
-																<option value="">Euro</option>
-																<option value="">Hong Kong Dollar</option>
-															</select>
-														</span>
-													</div>
-												</fieldset>
+														
 												<hr/>
-												<section  >
-												<div className="wt-tabscontenttitle" style={{marginTop: '25px'}}>
-												<h2 style={{fontWeight:'bolder'}}>Password Update </h2>
-											</div>
-												<fieldset>
-													<div className="form-group form-group-half">
-														<input type="password" name="password" className="form-control" placeholder="Last Remember Password" />
-													</div>
-													<div className="form-group form-group-half">
-														<input type="password" name="password" className="form-control" placeholder="New Password" />
+											</form>
+                                                    </Card.Body>
+                                                    </Accordion.Collapse>
+                                                </Card>
+                                                <Card>
+
+                                                    <Card.Header  style={{backgroundColor: 'white'}}>
+                                                        <Accordion.Toggle  eventKey="1"  style={{backgroundColor: 'white'}}>
+														<strong>
+														Registration as a company
+														</strong>
+                                                        </Accordion.Toggle>
+                                                    </Card.Header>
+                                                    <Accordion.Collapse eventKey="1">
+                                                    <Card.Body>
+													<form className="wt-formtheme wt-userform">
+												<div className="form-group">
+												<input type="text" placeholder="Company's name" className="" name="" id="" style={{width: '100%'}} />
+												</div>
+												
+												<div className="form-group">
+													<input type="text" placeholder="Company' website" className="" name="" id="" style={{width: '100%'}} />
 													</div>
 													<div className="form-group">
-														<span className="wt-checkbox">
-															<input id="termsconditions" type="checkbox" name="termsconditions" value="termsconditions" />
-															<label for="termsconditions"><span>Logout from all other web/mobile session now.</span></label>
-														</span>
+													<input type="file" placeholder="Upload Company'logo" className="" name="" id="" style={{width: '100%'}} /><label>Upload Company Logo</label>
 													</div>
-												</fieldset>
-												</section>
-												<div className="wt-tabscontenttitle" style={{marginTop: '25px'}}>
-												<h2 style={{fontWeight:'bolder'}}>Email Update </h2>
-											</div>
-											<form className="wt-formtheme wt-userform">
-													<fieldset>
-														<div className="form-group form-disabeld">
-															<input type="password" name="password" className="form-control" placeholder="youremail@domainurl.com" disabled="" />
+
+													<div className="form-group">
+														<input type="text" placeholder="Company' Email Address" className="" name="" id="" style={{width: '100%'}} />
 														</div>
-													</fieldset>
-												</form>
-											<ul className="wt-accountinfo">
-													<li>
-														<div className="wt-on-off">
-															<input type="checkbox" id="hide-onemail" name="contact_form" />
-															<label for="hide-onemail"><i></i></label>
-														</div>
-														<span>Send me Weekly newsletter alerts</span>
-													</li>
-													<li>
-														<div className="wt-on-off pull-right">
-															<input type="checkbox" id="hide-onemail1" name="contact_form" />
-															<label for="hide-onemail1"><i></i></label>
-														</div>
-														<span>Forward messages on this ID</span>
-													</li>
-													<li>
-														<div className="wt-on-off pull-right">
-															<input type="checkbox" id="hide-onemail2" name="contact_form" />
-															<label for="hide-onemail2"><i></i></label>
-														</div>
-														<span>Send me bonus &amp; promo alerts</span>
-													</li>
-													<li>
-														<div className="wt-on-off pull-right">
-															<input type="checkbox" id="hide-onemail3" name="contact_form" />
-															<label for="hide-onemail3"><i></i></label>
-														</div>
-														<span>Share latest security alerts</span>
-													</li>
-												</ul>
-	
+														<div className="form-group">
+															<input type="text" placeholder="Companny's Phone Number" className="" name="" id="" style={{width: '100%'}} />
+															</div>
+												<hr/>
 											</form>
+                                                    </Card.Body>
+                                                    </Accordion.Collapse>
+                                                </Card>
+											 </Accordion>
+											
 										</div>
 										
 									</div>
