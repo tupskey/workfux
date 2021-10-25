@@ -36,10 +36,10 @@ const Home = () => {
 													<span>In: <em className="selected-search-type">Freelancers </em><i className="lnr lnr-chevron-down"></i></span>
 												</div>
 												<div className="wt-radioholder">
-													<span className="wt-radio">
-														<input id="wt-freelancers" data-title="Freelancers" type="radio" name="searchtype" value="freelancer" checked />
+													{/* <span className="wt-radio">
+														<input id="wt-freelancers" data-title="Freelancers" type="radio" name="searchtype" value="freelancer"  />
 														<label htmlFor="wt-freelancers">Freelancers</label>
-													</span>
+													</span> */}
 													<span className="wt-radio">
 														<input id="wt-jobs"  data-title="Jobs" type="radio" name="searchtype" value="job" />
 														<label htmlFor="wt-jobs">Jobs</label>

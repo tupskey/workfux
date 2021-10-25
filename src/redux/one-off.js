@@ -3,13 +3,13 @@ import * as ActionTypes from './actiontypes'
 export const OneOff = (state = {
     projects : [],
     isLoading: false,
-    error: ''
+    error: null
 }, action) => {
      switch(action.type) {
         case ActionTypes.ONEOFF_LOADING:
             return {...state, isLoading : true}
         case ActionTypes.ONEOFF_FAILED:
-            return {...state, error: error }
+            return {...state, error: action.payload }
         case ActionTypes.FETCH_ONEOFF:
             return {...state, projects: action.payload}
         default:

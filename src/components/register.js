@@ -1,5 +1,6 @@
+
 import React, { Component} from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { withRouter } from "react-router";
 
 const validateForm = errors => {
@@ -21,9 +22,7 @@ const validateForm = errors => {
 	
 
 
-// const validEmailRegex = RegExp(
-// 	/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
-//   );
+
 
   const validEmail = (text) => {
 	    const regex = RegExp(
@@ -32,6 +31,14 @@ const validateForm = errors => {
 	     
 	    return !regex.test(text);
 	}
+
+	
+const checkPassword = (str) =>
+{
+    const  re = RegExp(/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/);
+
+    return !re.test(str);
+}
 
 class Register extends  Component {
 
@@ -43,6 +50,7 @@ class Register extends  Component {
 			lastname: '',
 			password: '',
 			username: '',
+			currentStep: 1,
 			confirmpassword: '',
 			email: '',
 			status: 'company',
@@ -81,7 +89,7 @@ class Register extends  Component {
 				errors.email = validEmail(value)  ? 'Please Enter a Valid Email Adrress' : '' 
 			break;
 			case 'password':
-				errors.password = value.length < 7 ? 'Please enter 7 Characters and above' : '' 
+				errors.password = checkPassword(value) ? 'Please enter your password must contain a Uppercase, Lowercase, Special Charcater and a number' : '' 
 			break;
 			case 'confirmpassword': 
 				errors.confirmpassword = validateConfirmPassword(this.state.password, value) ? '' : 'Your Passwords do not match each other'  
@@ -97,33 +105,60 @@ class Register extends  Component {
 
 	handleSubmit (event) {
 		event.preventDefault();
-		this.props.history.push('/continue-reg')
+		const {email, username, password} = this.state;
+		const user = {email, username, password};
+		this.props.regUser(user)
+		console.log(user)
+	}
+
+	_next = () => {
+		let currentStep = this.state.currentStep
+		currentStep = currentStep >= 2? 3: currentStep + 1
+		this.setState({
+			currentStep: currentStep
+		})
+	}
+
+	_prev = () => {
+		let currentStep = this.state.currentStep
+		currentStep = currentStep <= 1? 1: currentStep - 1
+		this.setState({
+			currentStep: currentStep
+		})
+	}
+
+	previousButton() {
+		let currentStep = this.state.currentStep;
+		if(currentStep !== 1) {
+			return (
+				<button className="wt-btn" type="button" onClick={this._prev}>
+						Previous
+				</button>
+			)
+		}
+		return null;
+	}
+
+	nextButton() {
+		let currentStep = this.state.currentStep;
+		if(currentStep <3) {
+			return (
+				<button type="button" className="wt-btn float-right" onClick={this._next}>
+						Next
+				</button>
+			)
+		}
+		return null;
 	}
 
 	render () {
 	
 		const {errors} = this.state;
-		const forme =  this.state.email 
-		const enabled = !validateForm(forme);
+
 	
 		
 		return (
 			<>
-				<div className="wt-haslayout wt-innerbannerholder">
-					<div className="container">
-						<div className="row justify-content-md-center">
-							<div className="col-xs-12 col-sm-12 col-md-8 push-md-2 col-lg-6 push-lg-3">
-								<div className="wt-innerbannercontent">
-								<div className="wt-title"><h2>Join Now For FREE</h2></div>
-								<ol className="wt-breadcrumb">
-									<li><NavLink to="/">Home</NavLink></li>
-								</ol>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-	
 				<main id="wt-main" className="wt-main wt-haslayout wt-innerbgcolor">
 					
 					<div className="wt-haslayout wt-main-section">
@@ -154,7 +189,7 @@ class Register extends  Component {
 												</div>
 											<div className="wt-joinforms">
 												
-												<form  className="wt-formtheme wt-formregister">
+												<form  className="wt-formtheme wt-formregister" onSubmit={this.handleSubmit}>
 													<fieldset className="wt-registerformgroup">
 														{/* <div className="form-group wt-form-group-dropdown form-group-half">
 															<input type="text" name="firstname"  className="form-control" value={this.state.firstname} onChange={this.handleChange} placeholder="First Name" />
@@ -170,20 +205,46 @@ class Register extends  Component {
 																<span  className="errors">{errors.lastname}</span>
 															}
 														</div> */}
-														<div className="form-group">
+														{/* <div className="form-group">
 															<input type="email" name="email" value={this.state.email} className="form-control" onChange={this.handleChange} placeholder="work email address" />
 															{
 																errors.email.length > 0 && 
 																<span  className="errors">{errors.email}</span>
 															}
+														</div> */}
+
+														<Step1  currentStep={this.state.currentStep} handleChange={this.handleChange} email={this.state.email} />
+															{
+																errors.email.length > 0 && 
+															<span  className="errors">{errors.email}</span>
+															}
+
+														<Step2  currentStep={this.state.currentStep} handleChange={this.handleChange} username={this.state.username} />
+															{
+																errors.username.length > 0 && 
+															<div>	
+															<span  className="errors">{errors.username}</span>
+															</div>
+															}
+														<Step3 currentStep={this.state.currentStep} handleChange={this.handleChange} password={this.state.password} confirmpassword={this.state.confirmpassword} />
+														{
+															errors.password.length > 0 && 
+															<div>
+															<span  className="errors">{errors.password}</span>
+															</div>
+														}
+														{
+														errors.confirmpassword.length > 0 && 
+														<div>
+														<span  className="errors">{errors.confirmpassword}</span>
 														</div>
-														
+														}
+														{this.previousButton()}
+														{this.nextButton()}
 														<fieldset className="wt-formregisterstart">
 														
 													</fieldset>
-														<div className="form-group">
-															<button style={{width: '100%'}} type="submit" disabled={!enabled} className="wt-btn" onClick={this.handleSubmit} >Continue with email </button>
-													</div>
+														
 													</fieldset>
 													
 												   
@@ -208,3 +269,45 @@ class Register extends  Component {
 
 	
 export default withRouter(Register);
+
+
+function Step1(props) {
+	if (props.currentStep !== 1) {
+		return null
+	} return (
+		<div className="form-group">
+		<input type="text" name="email" value={props.email} className="form-control" onChange={props.handleChange} placeholder="Continue with your email..." />
+		</div>
+	)
+} 
+
+function Step2(props) {
+	if (props.currentStep !== 2) {
+		return null
+	} return (
+		<div className="form-group">
+		<input type="text" name="username" value={props.username} className="form-control" onChange={props.handleChange} placeholder="Username..." />
+		</div>
+	)
+} 
+
+function Step3(props) {
+	const forme =  props.password && props.confirmpassword;
+	const enabled = !validateForm(forme);
+	if (props.currentStep !== 3) {
+		return null
+	} return (
+		<>
+			<div className="form-group form-group-half">
+			<input type="password" name="password" value={props.password} className="form-control" onChange={props.handleChange} placeholder="password..." />
+			</div>
+			<div className="form-group form-group-half">
+			<input type="password" name="confirmpassword" value={props.confirmpassword} className="form-control" onChange={props.handleChange} placeholder="Confirm Password*" />
+			</div>
+			<div className="form-group">
+				
+			<button style={{width: '100%'}} type="submit"  className="wt-btn" disabled={!enabled}  >Join now </button>
+			</div>
+	</>
+	)
+} 

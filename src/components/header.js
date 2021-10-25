@@ -15,8 +15,8 @@ class Header extends Component {
 		this.state = {
 			isModalOpen : false,
 			isnavopen: false,
-			username: 'tope',
-			password: 'tope',
+			email: '',
+			password: '',
 			authenticated: false,
 			usernameError: '',
 			passwordError: '',
@@ -57,16 +57,12 @@ class Header extends Component {
 		let msg =''
 		
 
-        if(!this.state.username) {
+        if(!this.state.email) {
             usernameError = "Username is required"
         }
         if(!this.state.password) {
             passwordError = "Password is required"
         }
-		
-		if(this.state.username !== 'tope'){
-			msg = 'incorrect'
-		}
         if(usernameError || passwordError || msg) {
             this.setState({usernameError, passwordError, msg})
             return false;
@@ -76,25 +72,14 @@ class Header extends Component {
 
 	handleSubmit = e => {
 		e.preventDefault();
-		if(this.validate()) {
-			this.setState({
-				username: '',
-				password: '',
-				passwordError: '',
-				usernameError: '',
-				msg: '',
-				authenticated: true
-			})
-			const { username, password} = this.state
-			const user = {username, password}
-			console.log(user)
-			this.props.history.push('/hire-virtual-assistant')
+		
+			const { email, password} = this.state
+			const user = {email, password}
+			this.props.loginUser(user);
+			this.props.history.push('/dashboard')
 			this.toggleModal()
 			console.log('good')
-		
-		}else{
-		console.log('fail')	
-		}
+	
 	}
 
     render() {
@@ -145,15 +130,15 @@ class Header extends Component {
 										<form className="wt-formtheme wt-loginform do-login-form" onSubmit={this.handleSubmit}>
 													<fieldset>
 														<div className="form-group">
-															<input type="text" name="username" className="form-control" 
+															<input type="text" name="email" className="form-control" 
 															placeholder="Username" onChange={this.handleChange}
-															value={this.state.username} />
+															value={this.state.email} />
 															{
-																this.state.username.length < 1 &&
+																this.state.email.length < 1 &&
 																<div className="errors">{this.state.usernameError}</div>
 															}
 															{
-																this.state.username.length > 1 && 
+																this.state.email.length > 1 && 
 																<div  className="errors">{this.state.msg}</div>
 															}
 														</div>

@@ -1,4 +1,5 @@
 import React, { Component }  from "react";
+import { connect} from 'react-redux';
 import { Route, Switch, withRouter } from "react-router";
 import Footer from "./footer";
 import Header from "./header";
@@ -24,9 +25,11 @@ import OrderDetails from "./orders/order-detail";
 import Sidebar from "./sidebar";
 import Invoices from "./dashboard/invoices";
 import Register2 from "./registration2";
+import { loginUser, regUser } from "../redux/useraction";
 
 class Main extends Component {
 
+    
     render () {
         
         
@@ -34,7 +37,8 @@ class Main extends Component {
         
         return (
             <>
-                <Header/>
+                <Header loginUser={this.props.loginUser} 
+                        isauth={this.props.isAuthenticated} />
                 
                 {
                     window.location.pathname !== '/join' && window.location.pathname !== '/about'
@@ -45,7 +49,7 @@ class Main extends Component {
                 <Switch>
                
                     <Route exact path="/" component={Home} />
-                    <Route   path="/join" component={Register} />
+                    <Route   path="/join" component={() => <Register regUser={this.props.regUser} />} />
                     <Route  path="/services" component={Services} />
                     <Route  path="/about" component={About} />
                     <Route path="/hire-virtual-assistant" component={Virtual} />
@@ -73,4 +77,17 @@ class Main extends Component {
 
 }
 
-export default withRouter(Main);
+const mapStateToProps = state => {
+    return {
+        auth: state.auth,
+        isAuthenticated: state.auth.token !== null
+    }
+}
+
+const mapDispatchToProps = dispatch => ({
+    
+    regUser: (email, username, password) => {dispatch(regUser(email, username, password))},
+    loginUser: (email, password) => {dispatch(loginUser(email, password))}
+})
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));

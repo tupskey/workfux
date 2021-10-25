@@ -1,6 +1,5 @@
 import React, { Component} from "react";
 import { NavLink } from "react-router-dom";
-import {  Accordion, Card  } from "react-bootstrap";
 
 const validateForm = errors => {
 	let valid = true;
@@ -45,7 +44,7 @@ class Register2 extends  Component {
 			username: '',
 			confirmpassword: '',
 			email: '',
-			status: 'company',
+			status: '',
 			errors: {
 				firstname: '',
 				lastname: '',
@@ -56,10 +55,10 @@ class Register2 extends  Component {
 			}
 		}
 		this.handleSubmit = this.handleSubmit.bind(this)
+		this.handleChange = this.handleChange.bind(this)
 	}
 
 	handleChange = event => {
-		event.preventDefault();
 		const {name, value} = event.target;
 		let errors = this.state.errors;
 
@@ -139,123 +138,81 @@ class Register2 extends  Component {
 												
 												</div>
 											</div>
-											<div className="wt-joinforms">
-											<Accordion defaultActiveKey="0" flush>
-                                               				 <Card  style={{marginBottom : '10px'}}>
-
-                                                    <Card.Header style={{backgroundColor: 'white'}}>
-                                                        <Accordion.Toggle  eventKey="0" style={{backgroundColor: 'white'}}><strong>
-														Continue your registration as an Individual
-															</strong>
-                                                        </Accordion.Toggle>
-                                                    </Card.Header>
-                                                    <Accordion.Collapse eventKey="0">
-                                                    <Card.Body>
+											<div className="wt-joinforms">		
 													<form  className="wt-formtheme wt-formregister">
-														<fieldset className="wt-registerformgroup">
-														<div className="form-group">
-															<input type="text" name="username" value={this.state.username} className="form-control" onChange={this.handleChange} placeholder="Username..." />
+															<div className="wt-accordiontitle" id="headingOne">
+														<span className="wt-radio">
+														<input id="wt-company" type="radio" name="status" value="company" checked={this.state.status === 'company'} onChange={this.handleChange} />
+														<label htmlFor="wt-company"> Start As a Company</label>
+														</span>
+															</div> 
 															{
-																errors.username.length > 0 && 
-																<span  className="errors">{errors.username}</span>
+																this.state.status === 'company' 
+																			? 
+																<fieldset className="wt-registerformgroup">
+																<div className="form-group">
+																	<input type="text" name="username" value={this.state.username} className="form-control" onChange={this.handleChange} placeholder="Username..." />
+																	{
+																		errors.username.length > 0 && 
+																		<span  className="errors">{errors.username}</span>
+																	}
+																</div>
+																<div className="form-group form-group-half">
+																	<input type="password" name="password" value={this.state.password} className="form-control" onChange={this.handleChange} placeholder="Password*" />
+																	{
+																		errors.password.length > 0 && 
+																		<span  className="errors">{errors.password}</span>
+																	}
+																</div>
+																<div className="form-group form-group-half">
+																	<input type="password" name="confirmpassword" value={this.state.confirmpassword} className="form-control" onChange={this.handleChange} placeholder="Confirm Password*" />
+																	{
+																		errors.confirmpassword.length > 0 && 
+																		<span  className="errors">{errors.confirmpassword}</span>
+																	}
+																</div>
+																</fieldset>
+																				:
+																			null		
 															}
+														<div className="wt-accordiontitle" style={{marginTop: '10px'}}>
+																<span className="wt-radio">
+																	<input id="wt-individual"  type="radio" name="status" value="individual" checked={this.state.status === 'individual'}  onChange={this.handleChange} />
+																	<label htmlFor="wt-individual">Start As an Individual</label>
+																</span>
 														</div>
-														<div className="form-group form-group-half">
-															<input type="password" name="password" value={this.state.password} className="form-control" onChange={this.handleChange} placeholder="Password*" />
-															{
-																errors.password.length > 0 && 
-																<span  className="errors">{errors.password}</span>
-															}
-														</div>
-														<div className="form-group form-group-half">
-															<input type="password" name="confirmpassword" value={this.state.confirmpassword} className="form-control" onChange={this.handleChange} placeholder="Confirm Password*" />
-															{
-																errors.confirmpassword.length > 0 && 
-																<span  className="errors">{errors.confirmpassword}</span>
-															}
-														</div>
-														</fieldset>
-														</form>
-                                                    </Card.Body>
-                                                    </Accordion.Collapse>
-                                                </Card>
-                                                <Card>
-
-                                                    <Card.Header style={{backgroundColor: 'white'}}>
-                                                        <Accordion.Toggle  eventKey="1" style={{backgroundColor: 'white'}}>
-																<strong>
-														Continue your registration as a company 
-																</strong>
-                                                        </Accordion.Toggle>
-                                                    </Card.Header>
-                                                    <Accordion.Collapse eventKey="1">
-                                                    <Card.Body>
-													<form  className="wt-formtheme wt-formregister">
-														<fieldset className="wt-registerformgroup">
-														<div className="form-group">
-															<input type="text" name="username" value={this.state.username} className="form-control" onChange={this.handleChange} placeholder="Username..." />
-															{
-																errors.username.length > 0 && 
-																<span  className="errors">{errors.username}</span>
-															}
-														</div>
-														<div className="form-group form-group-half">
-															<input type="password" name="password" value={this.state.password} className="form-control" onChange={this.handleChange} placeholder="Password*" />
-															{
-																errors.password.length > 0 && 
-																<span  className="errors">{errors.password}</span>
-															}
-														</div>
-														<div className="form-group form-group-half">
-															<input type="password" name="confirmpassword" value={this.state.confirmpassword} className="form-control" onChange={this.handleChange} placeholder="Confirm Password*" />
-															{
-																errors.confirmpassword.length > 0 && 
-																<span  className="errors">{errors.confirmpassword}</span>
-															}
-														</div>
-														</fieldset>
-														</form>
-                                                    </Card.Body>
-                                                    </Accordion.Collapse>
-                                                </Card>
-												
-												</Accordion>
-												<form  className="wt-formtheme wt-formregister">
-													<fieldset className="wt-registerformgroup">
-														{/* <div className="form-group wt-form-group-dropdown form-group-half">
-															<input type="text" name="firstname"  className="form-control" value={this.state.firstname} onChange={this.handleChange} placeholder="First Name" />
-															{
-																errors.firstname.length > 0 && 
-																<span  className="errors">{errors.firstname}</span>
-															}
-														</div>
-														<div className="form-group form-group-half">
-															<input type="text" name="lastname" className="form-control" value={this.state.lastname} onChange={this.handleChange} placeholder="Last Name" />
-															{
-																errors.lastname.length > 0 && 
-																<span  className="errors">{errors.lastname}</span>
-															}
-														</div> */}
-														{/* <div className="form-group">
-															<input type="text" name="username" value={this.state.username} className="form-control" onChange={this.handleChange} placeholder="Username..." />
-															{
-																errors.username.length > 0 && 
-																<span  className="errors">{errors.username}</span>
-															}
-														</div> */}
-														
-			
-													
-														<fieldset className="wt-formregisterstart">
-														
-													</fieldset>
-														<div className="form-group">
+														{
+															this.state.status === 'individual' ? <fieldset className="wt-registerformgroup">
+															<div className="form-group">
+																<input type="text" name="username" value={this.state.username} className="form-control" onChange={this.handleChange} placeholder="Username..." />
+																{
+																	errors.username.length > 0 && 
+																	<span  className="errors">{errors.username}</span>
+																}
+															</div>
+															<div className="form-group form-group-half">
+																<input type="password" name="password" value={this.state.password} className="form-control" onChange={this.handleChange} placeholder="Password*" />
+																{
+																	errors.password.length > 0 && 
+																	<span  className="errors">{errors.password}</span>
+																}
+															</div>
+															<div className="form-group form-group-half">
+																<input type="password" name="confirmpassword" value={this.state.confirmpassword} className="form-control" onChange={this.handleChange} placeholder="Confirm Password*" />
+																{
+																	errors.confirmpassword.length > 0 && 
+																	<span  className="errors">{errors.confirmpassword}</span>
+																}
+															</div>
+															</fieldset>
+														: 
+														null
+														}
+														<div className="form-group" style={{marginTop: '10px'}}>
 															<button style={{width: '100%'}} type="submit" disabled={!enabled} className="wt-btn" onClick={this.handleSubmit} >Join Now </button>
-													</div>
-													</fieldset>
-													
-												   
-												</form>
+														</div>
+														</form>
+                                                   
 											
 											</div>
 										</div>

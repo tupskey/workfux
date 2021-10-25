@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import {  Accordion, Card  } from "react-bootstrap"; 
+
 
 const Profile = () => {
 
@@ -40,51 +40,33 @@ const Profile = () => {
 												<h2 style={{fontWeight:'bolder'}}>Profile Update </h2>
 											</div>
 
-											<Accordion defaultActiveKey="0" flush>
-                                            	 <Card>
+											<form className="wt-formtheme wt-userform">
+											<div className="form-group">
+												<input type="radio"  className="" name="" id="" style={{width: '100%'}} />
+												<label>Continue as a Company</label>
+												</div>
 
-                                                    <Card.Header  style={{backgroundColor: 'white'}}>
-                                                        <Accordion.Toggle  eventKey="0"  style={{backgroundColor: 'white'}}>
-															<strong>
-															Continue your registration as an Individual</strong>
-                                                        </Accordion.Toggle>
-                                                    </Card.Header>
-                                                    <Accordion.Collapse eventKey="0">
-                                                    <Card.Body><form className="wt-formtheme wt-userform">
 												<div className="form-group">
 												<input type="text" placeholder="FIRST NAME" className="" name="" id="" style={{width: '100%'}} />
 												</div>
 												
 												<div className="form-group">
 													<input type="text" placeholder="LAST NAME" className="" name="" id="" style={{width: '100%'}} />
-													</div>
+												</div>
 
 													<div className="form-group">
 														<input type="text" placeholder="EMAIL" className="" name="" id="" style={{width: '100%'}} />
-														</div>
+													</div>
 													<div className="form-group">
 															<input type="text" placeholder="COUNTRY" className="" name="" id="" style={{width: '100%'}} />
-														</div>
+													</div>
 														<div className="form-group">
 															<input type="text" placeholder="PHONE NUMBER" className="" name="" id="" style={{width: '100%'}} />
 															</div>
 														
 												<hr/>
 											</form>
-                                                    </Card.Body>
-                                                    </Accordion.Collapse>
-                                                </Card>
-                                                <Card>
-
-                                                    <Card.Header  style={{backgroundColor: 'white'}}>
-                                                        <Accordion.Toggle  eventKey="1"  style={{backgroundColor: 'white'}}>
-														<strong>
-														Registration as a company
-														</strong>
-                                                        </Accordion.Toggle>
-                                                    </Card.Header>
-                                                    <Accordion.Collapse eventKey="1">
-                                                    <Card.Body>
+                                                
 													<form className="wt-formtheme wt-userform">
 												<div className="form-group">
 												<input type="text" placeholder="Company's name" className="" name="" id="" style={{width: '100%'}} />
@@ -105,10 +87,6 @@ const Profile = () => {
 															</div>
 												<hr/>
 											</form>
-                                                    </Card.Body>
-                                                    </Accordion.Collapse>
-                                                </Card>
-											 </Accordion>
 											
 										</div>
 										
