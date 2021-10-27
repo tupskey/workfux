@@ -1,7 +1,44 @@
 
 
 
-const WorkFuxServices = () => {
+const WorkFuxServices = (props) => {
+
+	const services = props.services.services.map((serv)=> {
+
+		return(
+			<>
+				<span className="wt-featuredtag"><img src={process.env.PUBLIC_URL + 'assets/images/featured.png'} alt="imOg description" data-tipso="Plus Member" className="template-content tipso_style" /></span>
+												<div className="wt-userlistingcontent">
+													<div className="wt-contenthead">
+														<div className="wt-title"  key={serv.name}>	
+														<a href="usersingle.html"><i className="fa fa-check-circle"></i> {serv.name}</a>
+															<h2>I want some customization and installation</h2>
+														</div>
+														<div className="wt-description">
+															<p>Nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit inati voluptate velit esse cillum dolore eutates fugiat nulla pariatur sunt in culpa asequi officia deserunt mollit anim id est laborum ut perspiciatis...</p>
+														</div>
+														<div className="wt-tag wt-widgettag">
+															<a href="/">PHP</a>
+															<a href="/">HTML</a>
+															<a href="/">JQuery</a>
+														</div>
+													</div>
+													<div className="wt-viewjobholder">
+														<ul>
+															<li><span><i className="fa fa-dollar wt-viewjobdollar"></i>Professional</span></li>
+															<li><span><em><img src={process.env.PUBLIC_URL + 'assets/images/flag/img-04.png'} alt="imog description" /></em>England</span></li>
+															<li><span><i className="fa fa-folder wt-viewjobfolder"></i>Type: Per Hour</span></li>
+															<li><span><i className="fa fa-clock-o wt-viewjobclock"></i>Duration: 03 Months</span></li>
+															<li><span><i className="fa fa-tag wt-viewjobtag"></i>Job ID: gy3yV2Vm5u</span></li>
+															<li><a href="/" className="wt-clicklike wt-clicksave"><i className="fa fa-heart"></i> Save</a></li>
+															<li className="wt-btnarea"><a href="userlisting.html" className="wt-btn">Order Now</a></li>
+														</ul>
+													</div>
+									</div>
+			</>
+		)
+	})
+
     return (
         <>
         
@@ -46,34 +83,7 @@ const WorkFuxServices = () => {
 												</ul>
 											</div>
 											<div className="wt-userlistinghold wt-featured wt-userlistingholdvtwo">
-												<span className="wt-featuredtag"><img src={process.env.PUBLIC_URL + 'assets/images/featured.png'} alt="imOg description" data-tipso="Plus Member" className="template-content tipso_style" /></span>
-												<div className="wt-userlistingcontent">
-													<div className="wt-contenthead">
-														<div className="wt-title">
-															<a href="usersingle.html"><i className="fa fa-check-circle"></i> Light Bulb Association</a>
-															<h2>I want some customization and installation</h2>
-														</div>
-														<div className="wt-description">
-															<p>Nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit inati voluptate velit esse cillum dolore eutates fugiat nulla pariatur sunt in culpa asequi officia deserunt mollit anim id est laborum ut perspiciatis...</p>
-														</div>
-														<div className="wt-tag wt-widgettag">
-															<a href="/">PHP</a>
-															<a href="/">HTML</a>
-															<a href="/">JQuery</a>
-														</div>
-													</div>
-													<div className="wt-viewjobholder">
-														<ul>
-															<li><span><i className="fa fa-dollar wt-viewjobdollar"></i>Professional</span></li>
-															<li><span><em><img src={process.env.PUBLIC_URL + 'assets/images/flag/img-04.png'} alt="imog description" /></em>England</span></li>
-															<li><span><i className="fa fa-folder wt-viewjobfolder"></i>Type: Per Hour</span></li>
-															<li><span><i className="fa fa-clock-o wt-viewjobclock"></i>Duration: 03 Months</span></li>
-															<li><span><i className="fa fa-tag wt-viewjobtag"></i>Job ID: gy3yV2Vm5u</span></li>
-															<li><a href="/" className="wt-clicklike wt-clicksave"><i className="fa fa-heart"></i> Save</a></li>
-															<li className="wt-btnarea"><a href="userlisting.html" className="wt-btn">Order Now</a></li>
-														</ul>
-													</div>
-												</div>
+												{services}
 											</div>
 											<nav className="wt-pagination">
 												<ul>

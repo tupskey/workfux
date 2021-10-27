@@ -50,10 +50,11 @@ class Register extends  Component {
 			lastname: '',
 			password: '',
 			username: '',
+			companyname: '',
 			currentStep: 1,
 			confirmpassword: '',
 			email: '',
-			status: 'company',
+			status: '',
 			errors: {
 				firstname: '',
 				lastname: '',
@@ -105,10 +106,7 @@ class Register extends  Component {
 
 	handleSubmit (event) {
 		event.preventDefault();
-		const {email, username, password} = this.state;
-		const user = {email, username, password};
-		this.props.regUser(user)
-		console.log(user)
+		this.props.regUser(this.state.email, this.state.username, this.state.password)		
 	}
 
 	_next = () => {
@@ -141,7 +139,7 @@ class Register extends  Component {
 
 	nextButton() {
 		let currentStep = this.state.currentStep;
-		if(currentStep <3) {
+		if(currentStep <2) {
 			return (
 				<button type="button" className="wt-btn float-right" onClick={this._next}>
 						Next
@@ -219,15 +217,32 @@ class Register extends  Component {
 															<span  className="errors">{errors.email}</span>
 															}
 
-														<Step2  currentStep={this.state.currentStep} handleChange={this.handleChange} username={this.state.username} />
+														<Step2  currentStep={this.state.currentStep} handleChange={this.handleChange} username={this.state.username} 
+														password={this.state.password} confirmpassword={this.state.confirmpassword} 
+														status={this.state.status} checked={this.state.status === 'individual' || 'company'}   />
+															{
+																this.state.status === 'company' 
+																			? <fieldset className="wt-registerformgroup">
+																			<div className="form-group" style={{marginBottom: '10px'}}>
+																				<input type="text" name="companyname" value={this.state.companyname} className="form-control" onChange={this.handleChange} placeholder="Please Enter your company name" />
+																				{
+																					errors.username.length > 0 && 
+																					<span  className="errors">{errors.username}</span>
+																				}
+																			</div>
+																			
+																			</fieldset>
+																			:
+																			null
+																	
+															}
 															{
 																errors.username.length > 0 && 
 															<div>	
 															<span  className="errors">{errors.username}</span>
 															</div>
 															}
-														<Step3 currentStep={this.state.currentStep} handleChange={this.handleChange} password={this.state.password} confirmpassword={this.state.confirmpassword} />
-														{
+																{
 															errors.password.length > 0 && 
 															<div>
 															<span  className="errors">{errors.password}</span>
@@ -239,6 +254,7 @@ class Register extends  Component {
 														<span  className="errors">{errors.confirmpassword}</span>
 														</div>
 														}
+														
 														{this.previousButton()}
 														{this.nextButton()}
 														<fieldset className="wt-formregisterstart">
@@ -282,32 +298,62 @@ function Step1(props) {
 } 
 
 function Step2(props) {
+	const forme =  props.password && props.confirmpassword;
+	const enabled = !validateForm(forme);
 	if (props.currentStep !== 2) {
 		return null
 	} return (
+		<>
 		<div className="form-group">
 		<input type="text" name="username" value={props.username} className="form-control" onChange={props.handleChange} placeholder="Username..." />
 		</div>
-	)
-} 
-
-function Step3(props) {
-	const forme =  props.password && props.confirmpassword;
-	const enabled = !validateForm(forme);
-	if (props.currentStep !== 3) {
-		return null
-	} return (
-		<>
-			<div className="form-group form-group-half">
+		<div className="form-group form-group-half">
 			<input type="password" name="password" value={props.password} className="form-control" onChange={props.handleChange} placeholder="password..." />
 			</div>
 			<div className="form-group form-group-half">
 			<input type="password" name="confirmpassword" value={props.confirmpassword} className="form-control" onChange={props.handleChange} placeholder="Confirm Password*" />
 			</div>
-			<div className="form-group">
-				
-			<button style={{width: '100%'}} type="submit"  className="wt-btn" disabled={!enabled}  >Join now </button>
-			</div>
-	</>
+		<div className="form-group form-group-half">
+		
+			<span className="wt-radio">
+				<input id="wt-individual"  type="radio" name="status" value="individual"  onChange={props.handleChange} />
+				<label htmlFor="wt-individual">Start As an Individual</label>
+			</span>
+		</div>
+		<div className="form-group form-group-half">
+			<span className="wt-radio">
+				<input id="wt-company" type="radio" name="status" value="company"  onChange={props.handleChange} />
+				<label htmlFor="wt-company"> Start As a Company</label>
+			</span>
+		
+			</div>	
+			{
+				enabled ? <button style={{width: '100%'}} type="submit"  className="wt-btn" disabled={!enabled}  >Join now </button>
+				:
+				null
+			}
+		
+		</>
 	)
 } 
+
+// function Step3(props) {
+// 	const forme =  props.password && props.confirmpassword;
+// 	const enabled = !validateForm(forme);
+// 	if (props.currentStep !== 3) {
+// 		return null
+// 	} return (
+// 		<>
+// 			<div className="form-group form-group-half">
+// 			<input type="password" name="password" value={props.password} className="form-control" onChange={props.handleChange} placeholder="password..." />
+// 			</div>
+// 			<div className="form-group form-group-half">
+// 			<input type="password" name="confirmpassword" value={props.confirmpassword} className="form-control" onChange={props.handleChange} placeholder="Confirm Password*" />
+// 			</div>
+// 			<div className="form-group">
+				
+// 			<button style={{width: '100%'}} type="submit"  className="wt-btn" disabled={!enabled}  >Join now </button>
+// 			</div>
+// 	</>
+// 	)
+// } 

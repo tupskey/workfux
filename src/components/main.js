@@ -25,20 +25,24 @@ import OrderDetails from "./orders/order-detail";
 import Sidebar from "./sidebar";
 import Invoices from "./dashboard/invoices";
 import Register2 from "./registration2";
-import { loginUser, regUser } from "../redux/useraction";
+import { checkAuthState, loginUser, logOut, regUser } from "../redux/useraction";
+import { fetchServices } from "../redux/actioncreators";
 
 class Main extends Component {
 
+
+    componentDidMount() {
+        this.props.fetchServices();
+        this.props.checkStatus()
+    }
     
     render () {
-        
-        
-       
-        
+
         return (
             <>
                 <Header loginUser={this.props.loginUser} 
-                        isauth={this.props.isAuthenticated} />
+                        isauth={this.props.isAuthenticated}
+                        logOut={this.props.logOut} />
                 
                 {
                     window.location.pathname !== '/join' && window.location.pathname !== '/about'
@@ -62,15 +66,17 @@ class Main extends Component {
                     <Route path="/completed" component={Completed} />
                     <Route path="/cancelled" component={Cancelled} />
                     <Route path="/ongoing" component={Ongoing} />
-                    <Route path="/workfuxservices" component={WorkFuxServices} />
+                    <Route path="/workfuxservices" component={() => <WorkFuxServices services={this.props.services}/>} />
                     <Route path="/messages" component={Messages} />
                     <Route path="/custom-offers" component={Custom} />
                     <Route path="/invoices" component={Invoices} />
                     <Route path="/order-details" component={OrderDetails} />
                     <Route path="/continue-reg"  component={Register2} />
                 </Switch>
-             
-                <Footer/>
+                {
+                    window.location.pathname !== '/join' &&  <Footer/>
+                }
+               
             </>
         )
     }
@@ -80,6 +86,7 @@ class Main extends Component {
 const mapStateToProps = state => {
     return {
         auth: state.auth,
+        services: state.services,
         isAuthenticated: state.auth.token !== null
     }
 }
@@ -87,7 +94,10 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => ({
     
     regUser: (email, username, password) => {dispatch(regUser(email, username, password))},
-    loginUser: (email, password) => {dispatch(loginUser(email, password))}
+    loginUser: (email, password) => {dispatch(loginUser(email, password))},
+    fetchServices: () => {dispatch(fetchServices())},
+    checkStatus: () => {dispatch(checkAuthState())},
+    logOut: () => {dispatch(logOut())}
 })
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));

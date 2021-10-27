@@ -1,16 +1,32 @@
+import axios from 'axios'
+import { baseUrl } from '../shared/baseUrl'
 import * as ActionTypes from './actiontypes'
 
 
-export const loadingOneOff = () => ({
-    type: ActionTypes.ONEOFF_LOADING
+export const loadingServices = () => ({
+    type: ActionTypes.SERVICES_LOADING
 })
 
-export const oneOffFailed = (error) => ({
-    type: ActionTypes.oneOffFailed,
+export const servicesFailed = (error) => ({
+    type: ActionTypes.SERVICES_FAILED,
     error: error
 })
 
-export const fetchOneOff = (projects) => ({
-    type: ActionTypes.FETCH_ONEOFF,
-    projects: projects
-})
+export const fetchOneOff = (services) => {
+    return ({
+        type: ActionTypes.FETCH_SERVICES,
+        payload: services
+    })
+}
+
+
+
+
+export const fetchServices = () => async (dispatch) => {
+
+    dispatch(loadingServices(true))
+
+    const response = await axios.get(baseUrl + 'service/names');
+    const services = response.data.data;
+    return dispatch(fetchOneOff(services))
+}

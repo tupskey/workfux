@@ -73,10 +73,10 @@ class Header extends Component {
 	handleSubmit = e => {
 		e.preventDefault();
 		
-			const { email, password} = this.state
-			const user = {email, password}
-			this.props.loginUser(user);
-			this.props.history.push('/dashboard')
+			// const { email, password} = this.state
+			// const user = {email, password}
+			this.props.loginUser(this.state.email, this.state.password);
+			// console.log(user)
 			this.toggleModal()
 			console.log('good')
 	

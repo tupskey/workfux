@@ -140,7 +140,7 @@ class Register2 extends  Component {
 											</div>
 											<div className="wt-joinforms">		
 													<form  className="wt-formtheme wt-formregister">
-															<div className="wt-accordiontitle" id="headingOne">
+														<div className="wt-accordiontitle" id="headingOne">
 														<span className="wt-radio">
 														<input id="wt-company" type="radio" name="status" value="company" checked={this.state.status === 'company'} onChange={this.handleChange} />
 														<label htmlFor="wt-company"> Start As a Company</label>
