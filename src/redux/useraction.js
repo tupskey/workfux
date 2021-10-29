@@ -163,8 +163,7 @@ export const verifyEmail = (token) => async (dispatch) => {
           'Content-Type': 'application/json'
         }
       };
-
-      const body = JSON.stringify(token);
+    const body = JSON.stringify(token);
 
       const response = await axios.post(baseUrl + 'verify', body, config)
       dispatch(emailSucess(response.data))

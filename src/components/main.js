@@ -47,7 +47,7 @@ const mapDispatchToProps = dispatch => ({
     fetchServices: () => {dispatch(fetchServices())},
     checkStatus: () => {dispatch(checkAuthState())},
     logOut: () => {dispatch(logOut())},
-    verifyEmail: (data) => {dispatch(verifyEmail(data))}
+    verifyEmail: (token) => {dispatch(verifyEmail(token))}
 })
 
 class Main extends Component {
@@ -56,6 +56,8 @@ class Main extends Component {
     componentDidMount() {
         this.props.fetchServices();
         this.props.checkStatus(); 
+        
+        this.props.verifyEmail(this.props.match.params.token);
     }
     
     render () {
@@ -97,7 +99,7 @@ class Main extends Component {
                     <Route path="/order-details" component={OrderDetails} />
                     <Route path="/continue-reg"  component={Register2} />
                     <Route path="/email-verify" component={EmailVerify} />
-                    <Route path="/verify/account/:token" component={()=> <ConfirmVerify confirm={this.props.verifyEmail} />} />
+                    <Route path="/verify/account/:token" component={ConfirmVerify} />
                 </Switch>
                 {
                     window.location.pathname !== '/join' &&  <Footer/>
