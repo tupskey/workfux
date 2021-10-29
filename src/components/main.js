@@ -30,13 +30,32 @@ import { fetchServices } from "../redux/actioncreators";
 import EmailVerify from "./emailverfiy";
 import ConfirmVerify from "./confirm";
 
+
+const mapStateToProps = state => {
+    return {
+        auth: state.auth.user,
+        services: state.services,
+        redirect: state.redirect,
+        isAuthenticated: state.auth.token !== null
+    }
+}
+
+const mapDispatchToProps = dispatch => ({
+    
+    regUser: (email, username, password) => {dispatch(regUser(email, username, password))},
+    loginUser: (email, password) => {dispatch(loginUser(email, password))},
+    fetchServices: () => {dispatch(fetchServices())},
+    checkStatus: () => {dispatch(checkAuthState())},
+    logOut: () => {dispatch(logOut())},
+    verifyEmail: (data) => {dispatch(verifyEmail(data))}
+})
+
 class Main extends Component {
 
-
+    
     componentDidMount() {
         this.props.fetchServices();
-        // this.props.checkStatus()
-       
+        this.props.checkStatus(); 
     }
     
     render () {
@@ -90,23 +109,5 @@ class Main extends Component {
 
 }
 
-const mapStateToProps = state => {
-    return {
-        auth: state.auth.user,
-        services: state.services,
-        redirect: state.redirect,
-        isAuthenticated: state.auth.token !== null
-    }
-}
-
-const mapDispatchToProps = dispatch => ({
-    
-    regUser: (email, username, password) => {dispatch(regUser(email, username, password))},
-    loginUser: (email, password) => {dispatch(loginUser(email, password))},
-    fetchServices: () => {dispatch(fetchServices())},
-    checkStatus: () => {dispatch(checkAuthState())},
-    logOut: () => {dispatch(logOut())},
-    verifyEmail: (data) => {dispatch(verifyEmail(data))}
-})
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));

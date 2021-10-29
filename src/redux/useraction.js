@@ -121,39 +121,39 @@ export const regUser = (email, username, password) => async (dispatch) => {
 
 export const logOut = () =>  {
     localStorage.removeItem('token');
-    history.push('/')
+    localStorage.removeItem('expirationDate');
+ 
     return {
         type: ActionTypes.LOGOUT_SUCCESS,
     }
 
 }
 
-export const checkAuthState = () => {
-    return dispatch => {
+export const checkAuthState = () => (dispatch) => {
+   
      const token = localStorage.getItem('token')
      if(!token){
          dispatch(logOut())
      } else{    
     const expirationDate = new Date(localStorage.getItem('expirationDate'))
-        if(expirationDate < new Date()) {
+        if(expirationDate <=  new Date()) {
             dispatch(logOut())
         }else{
             dispatch(authSuccess(token))
-            dispatch(checkAuthTimeOut(expirationDate.getTime() - new Date().getTime() / 1000 ));
+            dispatch(checkAuthTimeOut((expirationDate.getTime() - new Date().getTime()) / 1000 ));
         }
      }
 
-    }
 }
 
 
 
-export const checkAuthTimeOut = (expirationTme) => {
-    return dispatch => {
+export const checkAuthTimeOut = (expirationTme) =>  (dispatch) =>{
+    
         setTimeout(()=> {
             dispatch(logOut())
         }, expirationTme * 1000)
-    }
+  
 }
 
 
