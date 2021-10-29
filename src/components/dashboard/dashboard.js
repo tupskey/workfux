@@ -1,5 +1,6 @@
 
 import { Bar } from 'react-chartjs-2';
+import { withRouter } from 'react-router';
 
 
 
@@ -227,4 +228,4 @@ const Dashboard = () => {
             </>
     );
 }
-export default Dashboard;
+export default withRouter(Dashboard);

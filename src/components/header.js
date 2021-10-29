@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { NavLink, Link} from 'react-router-dom'
-import { withRouter } from "react-router"
+import {  withRouter } from "react-router"
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
 
 
@@ -31,7 +31,9 @@ class Header extends Component {
 
 
 
-	
+	componentDidMount(){
+		
+	}
 
 	toggleModal () {
 		this.setState({
@@ -50,6 +52,12 @@ class Header extends Component {
 			 [name]: value
 		})
 	}
+
+	handleLogOut = e => {
+		e.preventDefault()
+		this.props.logOut()
+	}
+
 
 	validate() {
         let usernameError = '';
@@ -83,7 +91,12 @@ class Header extends Component {
 	}
 
     render() {
-		
+		// const {auth} = this.props;
+
+		// if(this.props.redirect){
+		// 	return <Redirect to={this.props.redirect} />
+		// }
+	
         return (
             <>
             <header id="wt-header" className="wt-header wt-haslayout">
@@ -115,11 +128,76 @@ class Header extends Component {
 										</div>
 									</nav>
 									
-									<div className="wt-loginarea">
+									{
+										this.props.isauth 
+										?
+										<div className="wt-userlogedin">
 										<figure className="wt-userimg">
-											<img src={process.env.PUBLIC_URL + 'assets/images/user-login.png'} alt="img description" />
+											<img src={process.env.PUBLIC_URL + 'assets/images/user-img.jpg'} alt="user description" />
 										</figure>
-										
+										<div className="wt-username">
+											<h3>{}</h3>
+											<span>Amento Tech</span>
+										</div>
+										<nav className="wt-usernav">
+											<ul>
+												<li>
+													<NavLink to="/dashboard">
+														<span>Dashboard</span>
+													</NavLink>
+												</li>
+												<li>
+													<NavLink to="/hire-virtual-assistant">
+														<span>Virtual Assistant</span>
+													</NavLink>
+												</li><li className="menu-item-has-children">
+													<Link to="/" >
+														<span>Orders</span>
+													</Link>
+													<ul className="sub-menu">						
+													<li><Link to="/ongoing"  style={{textDecoration: 'none'}}>Ongoing Orders</Link></li>
+													<li><Link to="/completed"  style={{textDecoration: 'none'}}>Completed Orders</Link></li>
+													<li><Link to="/cancelled"  style={{textDecoration: 'none'}}>Cancelled Orders</Link></li>
+													</ul>
+												</li>
+												<li>
+													<NavLink to="/workfuxservices">
+														<span>WorkFux Services</span>
+													</NavLink>
+												</li>
+												<li className="wt-notificationicon">
+													<NavLink to="/messages">
+													<span>Messages</span>
+													</NavLink>	
+												</li>
+												<li><NavLink to="/custom-offers">
+													<span>Custom Offers</span>
+													</NavLink>	
+												</li>
+												<li>
+													<NavLink to="/invoices">
+														<span>Invoices</span>
+													</NavLink>
+												</li>
+												<li>
+												<NavLink to="/profile">
+														<span>Profile Management</span>
+													</NavLink>
+												</li>
+												<li>
+													<NavLink to="/">
+													<span onClick={this.handleLogOut}>Logout</span>
+													</NavLink>
+												</li>
+											</ul>
+										</nav>
+									</div>
+										: 
+
+								<div className="wt-loginarea">
+								{/* <figure className="wt-userimg">
+								<img src={process.env.PUBLIC_URL + 'assets/images/user-login.png'} alt="img description" />
+								</figure> */}
 								<div className="wt-loginoption">
 									<span style={{cursor: 'pointer', color: '#00adf2', margin: '5px'}} onClick={this.toggleModal}>Login </span>
 									<Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
@@ -189,69 +267,11 @@ class Header extends Component {
 									</Modal>
                                 </div>   
 								<NavLink  to="/join" className="wt-btn">Join Now</NavLink> 
-									</div>
-									<div className="wt-userlogedin">
-										<figure className="wt-userimg">
-											<img src={process.env.PUBLIC_URL + 'assets/images/user-img.jpg'} alt="user description" />
-										</figure>
-										<div className="wt-username">
-											<h3>Louanne Mattioli</h3>
-											<span>Amento Tech</span>
-										</div>
-										<nav className="wt-usernav">
-											<ul>
-												<li>
-													<NavLink to="/dashboard">
-														<span>Dashboard</span>
-													</NavLink>
-												</li>
-												<li>
-													<NavLink to="/hire-virtual-assistant">
-														<span>Virtual Assistant</span>
-													</NavLink>
-												</li><li className="menu-item-has-children">
-													<Link to="/" >
-														<span>Orders</span>
-													</Link>
-													<ul className="sub-menu">						
-													<li><Link to="/ongoing"  style={{textDecoration: 'none'}}>Ongoing Orders</Link></li>
-													<li><Link to="/completed"  style={{textDecoration: 'none'}}>Completed Orders</Link></li>
-													<li><Link to="/cancelled"  style={{textDecoration: 'none'}}>Cancelled Orders</Link></li>
-													</ul>
-												</li>
-												<li>
-													<NavLink to="/workfuxservices">
-														<span>WorkFux Services</span>
-													</NavLink>
-												</li>
-												<li className="wt-notificationicon">
-													<NavLink to="/messages">
-													<span>Messages</span>
-													</NavLink>	
-												</li>
-												<li><NavLink to="/custom-offers">
-													<span>Custom Offers</span>
-													</NavLink>	
-												</li>
-												<li>
-													<NavLink to="/invoices">
-														<span>Invoices</span>
-													</NavLink>
-												</li>
-												<li>
-												<NavLink to="/profile">
-														<span>Profile Management</span>
-													</NavLink>
-												</li>
-												<li>
-													<NavLink to="/">
-													<span>Logout</span>
-													</NavLink>
-													
-												</li>
-											</ul>
-										</nav>
-									</div>
+								</div>
+									
+									}
+								
+									
 								</div>
 							</div>
 						</div>

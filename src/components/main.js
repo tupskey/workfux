@@ -25,15 +25,18 @@ import OrderDetails from "./orders/order-detail";
 import Sidebar from "./sidebar";
 import Invoices from "./dashboard/invoices";
 import Register2 from "./registration2";
-import { checkAuthState, loginUser, logOut, regUser } from "../redux/useraction";
+import { checkAuthState, loginUser, logOut, regUser, verifyEmail } from "../redux/useraction";
 import { fetchServices } from "../redux/actioncreators";
+import EmailVerify from "./emailverfiy";
+import ConfirmVerify from "./confirm";
 
 class Main extends Component {
 
 
     componentDidMount() {
         this.props.fetchServices();
-        this.props.checkStatus()
+        // this.props.checkStatus()
+       
     }
     
     render () {
@@ -42,10 +45,12 @@ class Main extends Component {
             <>
                 <Header loginUser={this.props.loginUser} 
                         isauth={this.props.isAuthenticated}
-                        logOut={this.props.logOut} />
+                        logOut={this.props.logOut}
+                        user={this.props.auth}
+                        redirect={this.props.redirect} />
                 
                 {
-                    window.location.pathname !== '/join' && window.location.pathname !== '/about'
+                  this.props.isAuthenticated &&  window.location.pathname !== '/join' && window.location.pathname !== '/about'
                     && window.location.pathname !== '/continue-reg'
                      && window.location.pathname !== '/services' && window.location.pathname !== '/' && window.innerWidth > 660 &&
                       <Sidebar />
@@ -72,6 +77,8 @@ class Main extends Component {
                     <Route path="/invoices" component={Invoices} />
                     <Route path="/order-details" component={OrderDetails} />
                     <Route path="/continue-reg"  component={Register2} />
+                    <Route path="/email-verify" component={EmailVerify} />
+                    <Route path="/verify/account/:token" component={()=> <ConfirmVerify confirm={this.props.verifyEmail} />} />
                 </Switch>
                 {
                     window.location.pathname !== '/join' &&  <Footer/>
@@ -85,8 +92,9 @@ class Main extends Component {
 
 const mapStateToProps = state => {
     return {
-        auth: state.auth,
+        auth: state.auth.user,
         services: state.services,
+        redirect: state.redirect,
         isAuthenticated: state.auth.token !== null
     }
 }
@@ -97,7 +105,8 @@ const mapDispatchToProps = dispatch => ({
     loginUser: (email, password) => {dispatch(loginUser(email, password))},
     fetchServices: () => {dispatch(fetchServices())},
     checkStatus: () => {dispatch(checkAuthState())},
-    logOut: () => {dispatch(logOut())}
+    logOut: () => {dispatch(logOut())},
+    verifyEmail: (data) => {dispatch(verifyEmail(data))}
 })
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));
