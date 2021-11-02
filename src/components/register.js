@@ -1,7 +1,8 @@
 
 import React, { Component} from "react";
 import { Link } from "react-router-dom";
-import { withRouter } from "react-router";
+import { regUser } from "../redux/actions/useraction";
+import { connect } from "react-redux";
 
 const validateForm = errors => {
 	let valid = true;
@@ -39,6 +40,16 @@ const checkPassword = (str) =>
 
     return !re.test(str);
 }
+
+const mapStateToProps = state => {
+	return {
+		error : state.error
+	}
+}
+
+const mapDispatchToProps = dispatch => ({
+	regUser: (email, username, password) => {dispatch(regUser(email, username, password))}
+})
 
 class Register extends  Component {
 
@@ -106,6 +117,7 @@ class Register extends  Component {
 
 	handleSubmit (event) {
 		event.preventDefault();
+		
 		this.props.regUser(this.state.email, this.state.username, this.state.password)		
 	}
 
@@ -152,6 +164,7 @@ class Register extends  Component {
 	render () {
 	
 		const {errors} = this.state;
+		const {error} = this.props;
 
 	
 		
@@ -186,7 +199,7 @@ class Register extends  Component {
 												
 												</div>
 											<div className="wt-joinforms">
-												
+												<p>{error.msg}</p>
 												<form  className="wt-formtheme wt-formregister" onSubmit={this.handleSubmit}>
 													<fieldset className="wt-registerformgroup">
 														{/* <div className="form-group wt-form-group-dropdown form-group-half">
@@ -284,7 +297,9 @@ class Register extends  Component {
 }
 
 	
-export default withRouter(Register);
+export default connect(mapStateToProps, mapDispatchToProps)(Register);
+
+
 
 
 function Step1(props) {

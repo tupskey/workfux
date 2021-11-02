@@ -2,9 +2,10 @@ import { applyMiddleware, createStore, combineReducers} from 'redux'
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import { OneOff } from './one-off';
-import { Auth } from './auth';
-import { Services } from './services';
+import { Auth } from './reducers/auth';
+import { Services } from './reducers/services';
 import { reDirect } from './redirect';
+import { ErrorHandler } from './reducers/error';
 
 export const ConfigureStore = () => {
     const store = createStore(
@@ -12,7 +13,8 @@ export const ConfigureStore = () => {
                 oneoff: OneOff,
                 auth: Auth,
                 services: Services,
-                redirect: reDirect
+                redirect: reDirect,
+                error: ErrorHandler
         }),
          applyMiddleware(thunk , logger)
     )

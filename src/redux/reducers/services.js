@@ -1,4 +1,4 @@
-import * as Actiontypes from './actiontypes'
+import * as Actiontypes from '../actions/actiontypes'
 
 export const Services = (state ={
     isLoading: false,

@@ -27,6 +27,11 @@ export const RESET_FAIL = 'RESET_FAIL'
 export const REDIRECT = 'REDIRECT'
 export const VERIFY_EMAIL = 'VERIFY_EMAIL'
 
+export const SET_ERRORS = 'SET_ERRORS'
+export const CLEAR_ERRORS = 'CLEAR_ERRORS'
+
+
+
 
 
 

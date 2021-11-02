@@ -1,4 +1,4 @@
-import * as ActionTypes from './actiontypes'
+import * as ActionTypes from './actions/actiontypes'
 
 export const OneOff = (state = {
     projects : [],

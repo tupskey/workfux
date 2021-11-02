@@ -10,12 +10,19 @@ import {
 } from 'cdbreact';
 import { NavLink } from 'react-router-dom';
 import { Badge } from 'reactstrap';
+import { logOut } from '../redux/actions/useraction';
+import {connect} from 'react-redux'
  
 
 
 
 
-const Sidebar = () => {
+const Sidebar = ({logOut}) => {
+
+  const handleLogout = event => {
+    event.preventDefault()
+    logOut();
+  }
     return (
       <div
       id="wt-sidebarwrapper" className="wt-sidebarwrapper ">
@@ -63,7 +70,7 @@ const Sidebar = () => {
             <NavLink
               exact
               to="/">
-              <CDBSidebarMenuItem><i className="ti-shift-right"></i>
+              <CDBSidebarMenuItem onClick={handleLogout}><i className="ti-shift-right"></i>
                 Logout
               </CDBSidebarMenuItem>
             </NavLink>
@@ -77,7 +84,7 @@ const Sidebar = () => {
     );
   };
    
-  export default Sidebar;
+  export default connect(null, {logOut})(Sidebar);
   
   
 

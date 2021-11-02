@@ -1,11 +1,23 @@
 import React, { Component } from "react"
 import { NavLink, Link} from 'react-router-dom'
-import {  withRouter } from "react-router"
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
+import { connect } from "react-redux"
+import { loginUser, logOut } from "../redux/actions/useraction";
+import { withRouter } from "react-router";
 
 
 
+const mapStateToProps = state => {
+	return {
+		isAuthenticated: state.auth.token !== null,
+		error: state.error
+	}
+}
 
+const mapDispatchToProps = dispatch => ({
+	loginUser: (email, password) => {dispatch(loginUser(email, password))},
+	logOut: () => {dispatch(logOut)}
+})
 
 class Header extends Component {
 
@@ -27,6 +39,7 @@ class Header extends Component {
 		this.handleSubmit = this.handleSubmit.bind(this)
 		this.handleChange = this.handleChange.bind(this)
 		this.toggleNav = this.toggleNav.bind(this)
+		this.handleLogOut = this.handleLogOut.bind(this)
     }
 
 
@@ -81,10 +94,8 @@ class Header extends Component {
 	handleSubmit = e => {
 		e.preventDefault();
 		
-			// const { email, password} = this.state
-			// const user = {email, password}
 			this.props.loginUser(this.state.email, this.state.password);
-			// console.log(user)
+			
 			this.toggleModal()
 			console.log('good')
 	
@@ -92,6 +103,8 @@ class Header extends Component {
 
     render() {
 		// const {auth} = this.props;
+
+		const {error} = this.props;
 
 		// if(this.props.redirect){
 		// 	return <Redirect to={this.props.redirect} />
@@ -122,14 +135,14 @@ class Header extends Component {
 												</li>
                                             
 												<li className="menu-item-has-children page_item_has_children">
-													<NavLink to="/services">Services</NavLink>
+													<NavLink to="/reset-password">Services</NavLink>
 												</li>
 											</ul>
 										</div>
 									</nav>
 									
 									{
-										this.props.isauth 
+										this.props.isAuthenticated 
 										?
 										<div className="wt-userlogedin">
 										<figure className="wt-userimg">
@@ -205,6 +218,7 @@ class Header extends Component {
 											<span>Log in</span>
 										</ModalHeader>
 										<ModalBody>
+										<p>{error.msg}</p>
 										<form className="wt-formtheme wt-loginform do-login-form" onSubmit={this.handleSubmit}>
 													<fieldset>
 														<div className="form-group">
@@ -240,9 +254,10 @@ class Header extends Component {
 													</fieldset>
 													</form>
 													</ModalBody>
+												
 													<ModalFooter>
 													<div className="wt-loginfooterinfo">
-														<a href="/" className="wt-forgot-password">Forgot password?</a>
+														<NavLink to="/forgot-password" className="wt-forgot-password">Forgot password?</NavLink>
 														<NavLink to="/join">Create account</NavLink>
 													</div>
 													</ModalFooter>
@@ -285,6 +300,8 @@ class Header extends Component {
 
 }
 
-export default withRouter(Header);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Header));
+
+
 
 

@@ -1,9 +1,23 @@
+import { useEffect } from "react";
+import { connect } from "react-redux";
+import { fetchServices } from "../../redux/actions/actioncreators";
+import Loading from "../loading";
+
+const mapStateToProps = state => {
+	return {
+		services: state.services.services,
+		isloading: state.services.isLoading
+	}
+}
+
+const WorkFuxServices = ({services,isloading, fetchServices}) => {
+	useEffect(()=> {
+		fetchServices();
+	}, [fetchServices])
+
+	const serviceso = services.map((serv)=> {
 
 
-
-const WorkFuxServices = (props) => {
-
-	const services = props.services.services.map((serv)=> {
 
 		return(
 			<>
@@ -39,9 +53,14 @@ const WorkFuxServices = (props) => {
 		)
 	})
 
+	if(isloading) {
+		return(
+			<Loading/>
+		)
+	}
+
     return (
-        <>
-        
+    <>
 	<div id="wt-wrapper" className="wt-wrapper wt-haslayout">
 		
 		<div className="wt-contentwrapper">
@@ -83,7 +102,7 @@ const WorkFuxServices = (props) => {
 												</ul>
 											</div>
 											<div className="wt-userlistinghold wt-featured wt-userlistingholdvtwo">
-												{services}
+												{serviceso}
 											</div>
 											<nav className="wt-pagination">
 												<ul>
@@ -112,4 +131,5 @@ const WorkFuxServices = (props) => {
     );
 }
 
-export default WorkFuxServices;
+export default connect(mapStateToProps, {fetchServices})(WorkFuxServices);
+

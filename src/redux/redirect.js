@@ -1,4 +1,4 @@
-import * as ActionType from './actiontypes'
+import * as ActionType from './actions/actiontypes'
 
 export const reDirect = (state ={}, action) => {
     switch(action.type) {

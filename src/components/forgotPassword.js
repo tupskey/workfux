@@ -1,12 +1,14 @@
 import React,{ Component } from "react";
+import { connect } from "react-redux";
+import { forgetpassword } from "../redux/actions/useraction";
 
-const validEmail = (text) => {
-	    const regex = RegExp(
-	        /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-	      );
-	     
-	    return !regex.test(text);
-	}
+// const validEmail = (text) => {
+// 	    const regex = RegExp(
+// 	        /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+// 	      );
+// 	     
+// 	    return !regex.test(text);
+// }
 
 class ForgotPassWord extends Component{
     constructor(){
@@ -15,6 +17,7 @@ class ForgotPassWord extends Component{
             email: ''
         }
         this.handleChange = this.handleChange.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleChange = event => {
@@ -25,7 +28,13 @@ class ForgotPassWord extends Component{
         })
      }
 
+     handleSubmit = event => {
+         event.preventDefault();
+         this.props.forgetpassword(this.state.email)
+     }
+
     render() {
+
         return(
             <>
                  <main id="wt-main" className="wt-main wt-haslayout wt-innerbgcolor">
@@ -42,10 +51,11 @@ class ForgotPassWord extends Component{
                                                     </h3>
                                                 </div>
                                             </div>
-                                            <form className="wt-formtheme wt-formregister">
+                                            <form className="wt-formtheme wt-formregister" onSubmit={this.handleSubmit}>
                                                  <div className="form-group">
 		                                            <input type="text" name="email" value={this.state.email} className="form-control" onChange={this.handleChange} placeholder="Continue with your email..." />
 		                                        </div>
+                                                <button className="wt-btn">Submit</button>
                                              </form>
                                         </div>
                                     </div>
@@ -59,4 +69,8 @@ class ForgotPassWord extends Component{
     }
 }
 
-export default ForgotPassWord
+const mapDispatchToProps = dispatch => ({
+    forgetpassword: (email) => {dispatch(forgetpassword(email))}
+})
+
+export default connect(null, mapDispatchToProps)(ForgotPassWord)

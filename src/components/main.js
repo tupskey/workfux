@@ -25,53 +25,45 @@ import OrderDetails from "./orders/order-detail";
 import Sidebar from "./sidebar";
 import Invoices from "./dashboard/invoices";
 import Register2 from "./registration2";
-import { checkAuthState, loginUser, logOut, regUser, verifyEmail } from "../redux/useraction";
-import { fetchServices } from "../redux/actioncreators";
+import { checkAuthState } from "../redux/actions/useraction";
 import EmailVerify from "./emailverfiy";
 import ConfirmVerify from "./confirm";
+import ForgotPassWord from "./forgotPassword";
+import ResetPassWord from "./resetPasssword";
 
 
 const mapStateToProps = state => {
     return {
-        auth: state.auth.user,
-        services: state.services,
-        redirect: state.redirect,
-        isAuthenticated: state.auth.token !== null
+        error: state.error
     }
 }
 
 const mapDispatchToProps = dispatch => ({
-    
-    regUser: (email, username, password) => {dispatch(regUser(email, username, password))},
-    loginUser: (email, password) => {dispatch(loginUser(email, password))},
-    fetchServices: () => {dispatch(fetchServices())},
-    checkStatus: () => {dispatch(checkAuthState())},
-    logOut: () => {dispatch(logOut())},
-    verifyEmail: (token) => {dispatch(verifyEmail(token))}
+     checkStatus: () => {dispatch(checkAuthState())},
 })
 
 class Main extends Component {
 
     
-    componentDidMount() {
-        this.props.fetchServices();
+    componentDidMount() {        
         this.props.checkStatus(); 
-        
-        this.props.verifyEmail(this.props.match.params.token);
+              
     }
+
+    // static propTypes = {
+    //     match: PropTypes.object.isRequired,
+    //     location: PropTypes.object.isRequired,
+    //     history: PropTypes.object.isRequired
+    //   }
     
     render () {
-
+        
         return (
             <>
-                <Header loginUser={this.props.loginUser} 
-                        isauth={this.props.isAuthenticated}
-                        logOut={this.props.logOut}
-                        user={this.props.auth}
-                        redirect={this.props.redirect} />
+                <Header/>
                 
                 {
-                  this.props.isAuthenticated &&  window.location.pathname !== '/join' && window.location.pathname !== '/about'
+                    window.location.pathname !== '/join' && window.location.pathname !== '/about'
                     && window.location.pathname !== '/continue-reg'
                      && window.location.pathname !== '/services' && window.location.pathname !== '/' && window.innerWidth > 660 &&
                       <Sidebar />
@@ -79,7 +71,7 @@ class Main extends Component {
                 <Switch>
                
                     <Route exact path="/" component={Home} />
-                    <Route   path="/join" component={() => <Register regUser={this.props.regUser} />} />
+                    <Route   path="/join" component={Register} />
                     <Route  path="/services" component={Services} />
                     <Route  path="/about" component={About} />
                     <Route path="/hire-virtual-assistant" component={Virtual} />
@@ -92,11 +84,13 @@ class Main extends Component {
                     <Route path="/completed" component={Completed} />
                     <Route path="/cancelled" component={Cancelled} />
                     <Route path="/ongoing" component={Ongoing} />
-                    <Route path="/workfuxservices" component={() => <WorkFuxServices services={this.props.services}/>} />
+                    <Route path="/workfuxservices" component={WorkFuxServices} />
                     <Route path="/messages" component={Messages} />
                     <Route path="/custom-offers" component={Custom} />
                     <Route path="/invoices" component={Invoices} />
                     <Route path="/order-details" component={OrderDetails} />
+                    <Route path="/forgot-password" component={ForgotPassWord} />
+                    <Route path="/reset-password/:token" component={ResetPassWord} />
                     <Route path="/continue-reg"  component={Register2} />
                     <Route path="/email-verify" component={EmailVerify} />
                     <Route path="/verify/account/:token" component={ConfirmVerify} />

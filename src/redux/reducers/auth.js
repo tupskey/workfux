@@ -1,4 +1,4 @@
-import { AUTH_START, AUTH_SUCCESS, LOGOUT_SUCCESS, REGISTER_START } from "./actiontypes";
+import { AUTH_START, AUTH_SUCCESS, LOGOUT_SUCCESS, REGISTER_START } from "../actions/actiontypes";
 
 export const Auth = (state = {
                 token: null,
